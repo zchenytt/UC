@@ -1,0 +1,402 @@
+amd@amd:~/julia_projects/uc/Uc$ ./batchrun.sh
+###### SEEDi = 0
+> JuMP modeling
+1154.938750 seconds (84.84 G allocations: 2.467 TiB, 82.05% gc time, 49 lock conflicts, 50.29% compilation time: <1% of which was recompilation)
+> ini_lb
+lb = 3.62014e+03
+807.994320 seconds (660.72 k allocations: 33.260 MiB, 11 lock conflicts, 2.58% compilation time)
+Mem used in ini_lb> 302.0109176635742 GiB
+Set parameter OutputFlag to value 1
+Optimize a model with 6109 rows, 6108 columns and 362940 nonzeros (Min)
+Model fingerprint: 0xe6629058
+Model has 6107 linear objective coefficients
+Variable types: 6049 continuous, 59 integer (59 binary)
+eval_MIP_Runtime = 0.5827240943908691
+Sol=1: lb = 3620.1399244541785, agap = 1569.4398762037977, rgap = 0.30242137831752997
+> derived_ub = 5189.579800657976
+1585.332638 seconds
+> main training
+6111.027659 seconds (623.51 k allocations: 36.530 MiB, 757 lock conflicts, 0.30% compilation time)
+Set parameter OutputFlag to value 1
+Optimize a model with 50298 rows, 6108 columns and 3014207 nonzeros (Min)
+Model fingerprint: 0x4f0117f4
+Model has 6107 linear objective coefficients
+Variable types: 6049 continuous, 59 integer (59 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.550483179849e+03, best bound 4.550450763833e+03, gap 0.0007%
+eval_MIP_Runtime = 64.43518304824829
+Sol=1: lb = 4550.450763832894, agap = 4.1929585333264185, rgap = 0.0009205897955829792
+> derived_ub = 4554.643722366221
+Sol=2: lb = 4550.450763832894, agap = 4.642469618638643, rgap = 0.001019182128819107
+3802.712024 seconds (102.05 k allocations: 6.874 MiB, 7 lock conflicts, 0.00% compilation time)
+
+###### SEEDi = 1
+> JuMP modeling
+1130.351417 seconds (84.86 G allocations: 2.472 TiB, 81.65% gc time, 89 lock conflicts, 51.32% compilation time: <1% of which was recompilation)
+> ini_lb
+lb = 3.08825e+03
+797.165672 seconds (660.70 k allocations: 33.259 MiB, 23 lock conflicts, 2.75% compilation time)
+Mem used in ini_lb> 307.70249938964844 GiB
+Set parameter OutputFlag to value 1
+Optimize a model with 6116 rows, 6115 columns and 405283 nonzeros (Min)
+Model fingerprint: 0x0fc3db1e
+Model has 6114 linear objective coefficients
+Variable types: 6049 continuous, 66 integer (66 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.088249758869e+03, best bound 3.088249758869e+03, gap 0.0000%
+eval_MIP_Runtime = 0.5763778686523438
+Sol=1: lb = 3088.2497588693504, agap = 2765.364530464897, rgap = 0.47242001159926306
+1712.680811 seconds (371.49 k allocations: 19.291 MiB, 5 lock conflicts, 0.44% compilation time)
+lb = 3.08825e+03
+> main training
+6019.707878 seconds (623.81 k allocations: 36.545 MiB, 826 lock conflicts, 0.31% compilation time)
+Set parameter OutputFlag to value 1
+Optimize a model with 50521 rows, 6115 columns and 3380313 nonzeros (Min)
+Model fingerprint: 0x57022f4f
+Model has 6114 linear objective coefficients
+Variable types: 6049 continuous, 66 integer (66 binary)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.523650143957e+03, best bound 4.523650143958e+03, gap 0.0000%
+
+User-callback calls 27248, time in user-callback 0.01 sec
+eval_MIP_Runtime = 175.49800610542297
+Sol=1: lb = 4523.650143957993, agap = 4.268506698831516, rgap = 0.0009427083453039337
+Sol=2: lb = 4523.650143957993, agap = 8.829140767054923, rgap = 0.0019479715653218969
+3901.224834 seconds (123.89 k allocations: 7.540 MiB, 19 lock conflicts, 0.00% compilation time)
+
+###### SEEDi = 2
+1176.085518 seconds (84.86 G allocations: 2.470 TiB, 82.20% gc time, 109 lock conflicts, 54.79% compilation time: <1% of which was recompilation)
+lb = 3.11297e+03
+815.029465 seconds (660.74 k allocations: 33.263 MiB, 14 lock conflicts, 3.07% compilation time)
+Mem used in ini_lb> 295.72095108032227 GiB
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+Optimize a model with 6112 rows, 6111 columns and 381087 nonzeros (Min)
+Model fingerprint: 0x8e2022ab
+Model has 6110 linear objective coefficients
+Variable types: 6049 continuous, 62 integer (62 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.112967921866e+03, best bound 3.112967921866e+03, gap 0.0000%
+eval_MIP_Runtime = 0.5954759120941162
+Sol=1: lb = 3112.967921865535, agap = 2414.3290373854393, rgap = 0.4368010358742539
+1805.287775 seconds 
+lb = 3.11297e+03
+> main training
+6438.819452 seconds
+Set parameter OutputFlag to value 1
+Optimize a model with 52409 rows, 6111 columns and 3297691 nonzeros (Min)
+Model fingerprint: 0xc922dff7
+Model has 6110 linear objective coefficients
+Variable types: 6049 continuous, 62 integer (62 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -3.0790122e+06   7.931392e+10   0.000000e+00     10s
+    7515    4.6798181e+03   1.026485e+06   0.000000e+00     15s
+    9555    4.6821366e+03   1.963350e+03   0.000000e+00     20s
+   11593    4.6827264e+03   3.386595e+03   0.000000e+00     25s
+   13473    4.6829040e+03   1.177126e+03   0.000000e+00     30s
+   15153    4.6829717e+03   4.947938e+02   0.000000e+00     35s
+   16613    4.6829991e+03   6.916484e+03   0.000000e+00     40s
+   18273    4.6830097e+03   2.659438e+00   0.000000e+00     46s
+   18691    4.6830099e+03   0.000000e+00   0.000000e+00     47s
+
+Root relaxation: objective 4.683010e+03, 18691 iterations, 37.41 seconds (61.86 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4683.00987    0   48 4934.46869 4683.00987  5.10%     -   48s
+H    0     0                    4756.2320386 4683.00987  1.54%     -   49s
+H    0     0                    4683.0400113 4683.00987  0.00%     -   50s
+     0     0 4683.02452    0   47 4683.04001 4683.02452  0.00%     -   68s
+     0     0 4683.02845    0   48 4683.04001 4683.02845  0.00%     -   76s
+     0     0 4683.03039    0   47 4683.04001 4683.03039  0.00%     -   82s
+     0     0 4683.03130    0   48 4683.04001 4683.03130  0.00%     -   85s
+     0     0 4683.03196    0   48 4683.04001 4683.03196  0.00%     -   88s
+     0     0 4683.03230    0   49 4683.04001 4683.03230  0.00%     -   91s
+     0     0 4683.03493    0   51 4683.04001 4683.03493  0.00%     -  140s
+     0     0 4683.03657    0   51 4683.04001 4683.03657  0.00%     -  148s
+     0     0 4683.03750    0   51 4683.04001 4683.03750  0.00%     -  155s
+     0     0 4683.03792    0   52 4683.04001 4683.03792  0.00%     -  159s
+     0     0 4683.03843    0   51 4683.04001 4683.03843  0.00%     -  211s
+     0     0 4683.03851    0   51 4683.04001 4683.03851  0.00%     -  213s
+     0     0 4683.03858    0   52 4683.04001 4683.03858  0.00%     -  260s
+     0     0 4683.03858    0   52 4683.04001 4683.03858  0.00%     -  266s
+     0     0 4683.03858    0   52 4683.04001 4683.03858  0.00%     -  266s
+     0     2 4683.03858    0   52 4683.04001 4683.03858  0.00%     -  293s
+     1     3 4683.03861    1   50 4683.04001 4683.03861  0.00%   242  295s
+     2     4 4683.03983    2   38 4683.04001 4683.03868  0.00%   818  304s
+     3     5 4683.05413    2   46 4683.04001 4683.03878  0.00%   975  313s
+
+Cutting planes:
+  MIR: 1819
+
+Explored 4 nodes (32531 simplex iterations) in 313.88 seconds (320.10 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 4683.04 4683.09 
+No other solutions better than 4683.09
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.683040011314e+03, best bound 4.683038782055e+03, gap 0.0000%
+
+User-callback calls 104564, time in user-callback 0.03 sec
+eval_MIP_Runtime = 313.8838081359863
+Sol=1: lb = 4683.0387820550495, agap = 4.798958364678583, rgap = 0.0010237040252696343
+Sol=2: lb = 4683.0387820550495, agap = 5.002946633165266, rgap = 0.0010671719499743375
+4308.989231 seconds
+
+###### SEEDi = 3
+> Modeling
+1168.922598 seconds (84.83 G allocations: 2.466 TiB, 82.08% gc time, 82 lock conflicts, 51.14% compilation time: <1% of which was recompilation)
+lb = 3.51935e+03
+773.724685 seconds (660.70 k allocations: 33.258 MiB, 18 lock conflicts, 2.69% compilation time)
+Mem used in ini_lb> 296.5045928955078 GiB
+Set parameter OutputFlag to value 1
+Optimize a model with 6113 rows, 6112 columns and 387136 nonzeros (Min)
+Model fingerprint: 0xd4fdbd7d
+Model has 6111 linear objective coefficients
+Variable types: 6049 continuous, 63 integer (63 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.519351822160e+03, best bound 3.519351822160e+03, gap 0.0000%
+eval_MIP_Runtime = 0.5970790386199951
+Sol=1: lb = 3519.35182215982, agap = 2029.3534425430512, rgap = 0.36573458955414917
+1648.748723 seconds
+lb = 3.51935e+03
+6313.925534 seconds 
+Set parameter OutputFlag to value 1
+Optimize a model with 50887 rows, 6112 columns and 3252556 nonzeros (Min)
+Model fingerprint: 0x2c2993a4
+Model has 6111 linear objective coefficients
+Variable types: 6049 continuous, 63 integer (63 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.563954632886e+03, best bound 4.563937198965e+03, gap 0.0004%
+eval_MIP_Runtime = 68.0604259967804
+Sol=1: lb = 4563.937198965267, agap = 3.8867712979899807, rgap = 0.000850902163326135
+Sol=2: lb = 4563.937198965267, agap = 4.1670747476619, rgap = 0.0009122109518474115
+4536.837009 seconds
+
+###### SEEDi = 4
+1152.408118 seconds (84.89 G allocations: 2.471 TiB, 81.84% gc time, 73 lock conflicts, 51.82% compilation time: <1% of which was recompilation)
+lb = 3.22463e+03
+803.886771 seconds (660.74 k allocations: 33.263 MiB, 22 lock conflicts, 2.55% compilation time)
+Mem used in ini_lb> 297.2972640991211 GiB
+Set parameter OutputFlag to value 1
+Optimize a model with 6115 rows, 6114 columns and 399234 nonzeros (Min)
+Model fingerprint: 0x3e6528f5
+Model has 6113 linear objective coefficients
+Variable types: 6049 continuous, 65 integer (65 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.224630665199e+03, best bound 3.224630665199e+03, gap 0.0000%
+eval_MIP_Runtime = 0.6151299476623535
+Sol=1: lb = 3224.6306651986074, agap = 2636.7522132245253, rgap = 0.44985155686227435
+1483.890407 seconds (371.52 k allocations: 19.293 MiB, 9 lock conflicts, 0.61% compilation time)
+lb = 3.22463e+03
+
+6349.029941 seconds (623.73 k allocations: 36.541 MiB, 865 lock conflicts, 0.31% compilation time)
+Set parameter OutputFlag to value 1
+Optimize a model with 53004 rows, 6114 columns and 3493828 nonzeros (Min)
+Model fingerprint: 0x690295cc
+Model has 6113 linear objective coefficients
+Variable types: 6049 continuous, 65 integer (65 binary)
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4650.93058    0   41 5051.68411 4650.93058  7.93%     -   65s
+H    0     0                    4666.6455127 4650.93058  0.34%     -   66s
+H    0     0                    4650.9746380 4650.93058  0.00%     -   68s
+    11    11 4651.08201    9   37 4650.97464 4650.97260  0.00%  1092  418s
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.650974637992e+03, best bound 4.650972595137e+03, gap 0.0000%
+eval_MIP_Runtime = 418.3611810207367
+Sol=1: lb = 4650.972595137492, agap = 4.061546756353891, rgap = 0.0008725063302546474
+Sol=2: lb = 4650.972595137492, agap = 4.501154231767032, rgap = 0.0009668520271168675
+3772.857980 seconds (224.23 k allocations: 10.602 MiB, 11 lock conflicts, 0.00% compilation time)
+
+###### SEEDi = 5
+1146.402423 seconds (84.82 G allocations: 2.467 TiB, 81.86% gc time, 103 lock conflicts, 53.53% compilation time: <1% of which was recompilation)
+lb = 3.14027e+03
+781.795633 seconds (660.70 k allocations: 33.259 MiB, 28 lock conflicts, 2.89% compilation time)
+Mem used in ini_lb> 295.7603187561035 GiB
+Set parameter OutputFlag to value 1
+Optimize a model with 6117 rows, 6116 columns and 411332 nonzeros (Min)
+Model fingerprint: 0xa2c763f6
+Model has 6115 linear objective coefficients
+Variable types: 6049 continuous, 67 integer (67 binary)
+eval_MIP_Runtime = 0.5897960662841797
+Sol=1: lb = 3140.272913657032, agap = 2718.044784572857, rgap = 0.463963363645185
+1766.925090 seconds
+lb = 4.65709e+03
+6464.594837 seconds
+Set parameter OutputFlag to value 1
+Optimize a model with 53371 rows, 6116 columns and 3624490 nonzeros (Min)
+Model fingerprint: 0xe36cf46c
+Model has 6115 linear objective coefficients
+Variable types: 6049 continuous, 67 integer (67 binary)
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4657.08872    0   50 4943.85282 4657.08872  5.80%     -   53s
+H    0     0                    4657.1620842 4657.08872  0.00%     -   55s
+     2     4 4657.30044    1   48 4657.16208 4657.16033  0.00%  2038  326s
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.657162084204e+03, best bound 4.657160329826e+03, gap 0.0000%
+eval_MIP_Runtime = 326.58831787109375
+Sol=1: lb = 4657.1603298260225, agap = 4.337680881157212, rgap = 0.0009305336763404856
+Sol=2: lb = 4657.1603298260225, agap = 5.5815804090425445, rgap = 0.0011970596950242004
+4937.287654 seconds (184.04 k allocations: 9.376 MiB, 21 lock conflicts, 0.00% compilation time)
+
+###### SEEDi = 6
+1173.589323 seconds (84.86 G allocations: 2.470 TiB, 82.31% gc time, 105 lock conflicts, 52.14% compilation time: <1% of which was recompilation)
+lb = 1.47234e+03
+840.381120 seconds (660.72 k allocations: 33.261 MiB, 39 lock conflicts, 2.84% compilation time)
+Mem used in ini_lb> 287.10301971435547 GiB
+Set parameter OutputFlag to value 1
+Optimize a model with 6113 rows, 6112 columns and 387136 nonzeros (Min)
+Model fingerprint: 0x7b0c56eb
+Model has 6111 linear objective coefficients
+Variable types: 6049 continuous, 63 integer (63 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.472340977037e+03, best bound 1.472340977037e+03, gap 0.0000%
+eval_MIP_Runtime = 0.6711201667785645
+Sol=1: lb = 1472.340977037228, agap = 4219.181671386345, rgap = 0.7413098272665164
+1571.048768 seconds (371.59 k allocations: 19.300 MiB, 4 lock conflicts, 0.60% compilation time)
+> main training
+6230.327704 seconds (623.72 k allocations: 36.541 MiB, 773 lock conflicts, 0.31% compilation time)
+Set parameter OutputFlag to value 1
+Optimize a model with 54137 rows, 6112 columns and 3460626 nonzeros (Min)
+Model fingerprint: 0x018c9432
+Model has 6111 linear objective coefficients
+Variable types: 6049 continuous, 63 integer (63 binary)
+Root relaxation: objective 4.704049e+03, 18807 iterations, 40.69 seconds (65.17 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4704.04897    0   39 4997.62945 4704.04897  5.87%     -   51s
+H    0     0                    4767.0842713 4704.04897  1.32%     -   51s
+H    0     0                    4704.4159932 4704.04897  0.01%     -   52s
+     0     0 4704.13086    0   45 4704.41599 4704.13086  0.01%     -   71s
+     0     0 4704.16814    0   46 4704.41599 4704.16814  0.01%     -   82s
+     0     0 4704.18786    0   46 4704.41599 4704.18786  0.00%     -   87s
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.704415993216e+03, best bound 4.704264733733e+03, gap 0.0032%
+eval_MIP_Runtime = 544.1906108856201
+Sol=1: lb = 4704.264733733067, agap = 4.569387009853926, rgap = 0.0009703860642967406
+Sol=2: lb = 4704.264733733067, agap = 4.7520291499567975, rgap = 0.0010091340484095963
+4183.322440 seconds (330.37 k allocations: 13.842 MiB, 12 lock conflicts, 0.00% compilation time)
+
+
+###### SEEDi = 7
+1174.453432 seconds (84.81 G allocations: 2.465 TiB, 82.24% gc time, 75 lock conflicts, 50.44% compilation time: <1% of which was recompilation)
+lb = 3.08069e+03
+776.547803 seconds (660.72 k allocations: 33.261 MiB, 25 lock conflicts, 2.85% compilation time)
+Mem used in ini_lb> 300.5487480163574 GiB
+Set parameter OutputFlag to value 1
+Optimize a model with 6112 rows, 6111 columns and 381087 nonzeros (Min)
+Model fingerprint: 0xc108285b
+Model has 6110 linear objective coefficients
+Variable types: 6049 continuous, 62 integer (62 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.080687323934e+03, best bound 3.080687323934e+03, gap 0.0000%
+eval_MIP_Runtime = 0.5765480995178223
+Sol=1: lb = 3080.6873239343554, agap = 2635.0826811006823, rgap = 0.46101971891441235
+1935.114784 seconds (371.51 k allocations: 19.293 MiB, 20 lock conflicts, 0.39% compilation time)
+> main training
+6022.650324 seconds (623.15 k allocations: 36.511 MiB, 669 lock conflicts, 0.29% compilation time)
+Set parameter OutputFlag to value 1
+Optimize a model with 49529 rows, 6111 columns and 3116229 nonzeros (Min)
+Model fingerprint: 0x0f94aaa1
+Model has 6110 linear objective coefficients
+Variable types: 6049 continuous, 62 integer (62 binary)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4646.42166    0   29 5009.19102 4646.42166  7.24%     -   35s
+H    0     0                    4649.7336229 4646.42166  0.07%     -   36s
+H    0     0                    4646.4283820 4646.42166  0.00%     -   38s
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.646428381987e+03, best bound 4.646428381987e+03, gap 0.0000%
+eval_MIP_Runtime = 397.5028109550476
+Sol=1: lb = 4646.4283819871, agap = 3.4532995463223415, rgap = 0.000742663960684592
+Sol=2: lb = 4646.4283819871, agap = 6.923467822353814, rgap = 0.0014878453308097297
+4460.634794 seconds (105.06 k allocations: 6.966 MiB, 7 lock conflicts, 0.00% compilation time)
+
+###### SEEDi = 8
+1167.400685 seconds (84.82 G allocations: 2.465 TiB, 82.20% gc time, 57 lock conflicts, 55.00% compilation time: <1% of which was recompilation)
+lb = 4.11087e+03
+792.262890 seconds (660.71 k allocations: 33.259 MiB, 23 lock conflicts, 2.82% compilation time)
+Mem used in ini_lb> 296.2725639343262 GiB
+Set parameter OutputFlag to value 1
+Optimize a model with 6112 rows, 6111 columns and 381087 nonzeros (Min)
+Model fingerprint: 0x4850240f
+Model has 6110 linear objective coefficients
+Variable types: 6049 continuous, 62 integer (62 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.110869485571e+03, best bound 4.110869485571e+03, gap 0.0000%
+eval_MIP_Runtime = 0.57784104347229
+Sol=1: lb = 4110.8694855706735, agap = 2184.7571622129853, rgap = 0.34702775187313833
+1903.809473 seconds 
+> main training
+6164.776545 seconds (623.21 k allocations: 36.512 MiB, 649 lock conflicts, 0.28% compilation time)
+Set parameter OutputFlag to value 1
+Optimize a model with 49387 rows, 6111 columns and 3107251 nonzeros (Min)
+Model fingerprint: 0x8a0c2fea
+Model has 6110 linear objective coefficients
+Variable types: 6049 continuous, 62 integer (62 binary)
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5003.10934    0   43 5278.09509 5003.10934  5.21%     -   35s
+H    0     0                    5003.2748370 5003.10934  0.00%     -   36s
+H    0     0                    5003.2593329 5003.24610  0.00%     -  201s
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.003259332895e+03, best bound 5.003246097715e+03, gap 0.0003%
+eval_MIP_Runtime = 201.14924788475037
+Sol=1: lb = 5003.2460977146175, agap = 3.709033577280934, rgap = 0.0007407762762044018
+Sol=2: lb = 5003.2460977146175, agap = 3.841497103193433, rgap = 0.0007672118832451163
+4600.896078 seconds (130.18 k allocations: 7.732 MiB, 11 lock conflicts, 0.00% compilation time)
+
+###### SEEDi = 9 (OOM killed)
+1161.911174 seconds (84.90 G allocations: 2.475 TiB, 82.03% gc time, 64 lock conflicts, 53.80% compilation time: <1% of which was recompilation)
+lb = -4.99195e+02
+849.579917 seconds (660.71 k allocations: 33.261 MiB, 24 lock conflicts, 2.31% compilation time)
+Mem used in ini_lb> 302.1425132751465 GiB
+Set parameter OutputFlag to value 1
+Non-default parameters:
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+Optimize a model with 6119 rows, 6118 columns and 423429 nonzeros (Min)
+Model fingerprint: 0x70aadb2d
+Model has 6116 linear objective coefficients
+Variable types: 6049 continuous, 69 integer (69 binary)
+Optimal solution found (tolerance 1.00e-04)
+Best objective -4.991946375216e+02, best bound -4.991946375216e+02, gap 0.0000%
+eval_MIP_Runtime = 0.6719479560852051
+Sol=1: lb = -499.1946375215624, agap = 7331.266068319766, rgap = 1.0730663668519695
+1907.279226 seconds (371.57 k allocations: 19.298 MiB, 11 lock conflicts, 0.46% compilation time)
+> main training
+6736.497321 seconds (623.22 k allocations: 36.514 MiB, 717 lock conflicts, 0.26% compilation time)
+Set parameter OutputFlag to value 1
+Optimize a model with 54445 rows, 6118 columns and 3806090 nonzeros (Min)
+Model fingerprint: 0x4b3ed416
+Model has 6116 linear objective coefficients
+Variable types: 6049 continuous, 69 integer (69 binary)
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4997.27296    0   47 5742.76554 4997.27296  13.0%     -   59s
+H    0     0                    5187.8214705 4997.27296  3.67%     -   60s
+H    0     0                    4997.7815206 4997.27296  0.01%     -   60s
+     0     0 4997.39132    0   52 4997.78152 4997.39132  0.01%     -  145s
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.997781520610e+03, best bound 4.997391323589e+03, gap 0.0078%
+eval_MIP_Runtime = 147.0419042110443
+Sol=1: lb = 4997.391323589232, agap = 7.853563291282626, rgap = 0.0015690667427417935
+./batchrun.sh: line 3: 2941812 Killed                  julia --project=. --threads=126,2 src/script.jl $i
