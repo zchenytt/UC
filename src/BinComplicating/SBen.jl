@@ -11,7 +11,7 @@ function _1(ch, s, Θs, n, p)
     pi_hat = _sb_core!(n.Xl, n, x_che)
     Obn = Settings.getmodeldblattr(n, "ObjBound")
     vio = (pi_hat'x_che + Obn) - Θs # (x_che, Θs) here is local-stable
-    rand() < 0.005 && @ccall(printf("s=$s, vio=$vio\n"::Cstring; s::Cint, vio::Cdouble)::Cint)
+    rand() < 0.005 && @ccall(printf("s=%d, vio=%.3e\n"::Cstring; s::Cint, vio::Cdouble)::Cint)
     Cd[1] = Inf # is non-violating
     if vio > SB_CUT_COT
         Cd[end] = Obn         # height
