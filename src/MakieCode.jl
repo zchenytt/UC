@@ -31,15 +31,61 @@ end
 fig
 
 
+import JLD2
+a = JLD2.load("algo3data0.jld2");
 
-using JLD2
-# @load "myvec.jld2" timensinalgo3mst lbv mstreopttime timensinalgo3 subtermigap
+subtxs = a["subtxs"];
+subgapys = a["subgapys"];
+msttxs = a["msttxs"]; #
+mstlbys = a["mstlbys"]; #
+mstrotys = a["mstrotys"]; #
+mstroiys = a["mstroiys"]; #
+mstncys = a["mstncys"];
+map(length, (subtxs, subgapys, msttxs, mstlbys, mstrotys, mstroiys, mstncys));
+
 using CairoMakie
-f = Figure(size=(680,400), figure_padding = 0.01);
-ax1 = Axis(f[1, 1], ylabel = "Master Lower Bound", ylabelcolor=:blue, yticklabelcolor = :blue, xticksvisible=false, xticklabelsvisible=false);
-ax2 = Axis(f[1, 1], ylabelcolor=:green, ylabel = "Master Reoptimize Time (s)", yticklabelcolor = :green, yaxisposition = :right);hidespines!(ax2);hidexdecorations!(ax2);
-ax3 = Axis(f[2, 1]; yscale=log10, ylabel = "Subproblem Terminating Gap", xlabel="Runtime of Algorithm 3 (s)", xticksvisible=false);
-lines!(ax1, timensinalgo3mst, lbv, color = :blue);
-scatter!(ax2, timensinalgo3mst, mstreopttime, color = :green, markersize=4);
-scatter!(ax3, timensinalgo3, subtermigap, markersize=3, color = :tomato);
+f = Figure(size=(500,500), figure_padding = 1.);
+ax1 = Axis(f[1, 1], 
+    ylabel = "Master Lb",
+    ylabelcolor=:snow4, 
+    yticklabelcolor = :snow4, 
+    xticksvisible=false, 
+    xticklabelsvisible=false
+);
+ax2 = Axis(f[1, 1], 
+    ylabel = "Master Reoptimize Time (s)",
+    ylabelcolor=:green, 
+    yticklabelcolor = :green,
+    ylabelsize = 11,
+    yaxisposition = :right
+);hidespines!(ax2);hidexdecorations!(ax2);
+ax3 = Axis(f[2, 1];
+    ylabel = "Master Reoptimize #Iter",
+    ylabelcolor = :coral,
+    yticklabelcolor = :coral,
+    ylabelsize = 13,
+    xticksvisible=false,
+    yaxisposition = :right,
+    xticklabelsvisible=false
+);hidespines!(ax3);hidexdecorations!(ax3);
+ax4 = Axis(f[2, 1];
+    ylabel = "#Separating Cuts",
+    ylabelcolor=:blue, 
+    yticklabelcolor = :blue,
+    xticksvisible=false, 
+    xticklabelsvisible=false
+);
+ax5 = Axis(f[3, 1];
+    ylabel = "Subproblem Terminating Gap",
+    ylabelsize = 13,
+    yscale = log10,
+    xticksvisible = false,
+    xlabel = "Runtime of Algorithm 3 (s) (x-axis is shared)",
+);
+lines!(ax1, msttxs, mstlbys, color = :snow4);
+scatter!(ax2, msttxs, mstrotys, color = :green, markersize=1.5);
+scatter!(ax3, msttxs, mstroiys, color = :coral, markersize=1.5);
+lines!(ax4, msttxs, mstncys, color = :blue);
+scatter!(ax5, subtxs, subgapys, color = :goldenrod2, markersize=0.9);
 f
+save("algo3plot3.pdf", f)
