@@ -306,3 +306,82 @@ eval_MIP_Runtime = 196.34672713279724
 Sol=1: lb = 4591.013046719122 < 4611.070513771387 = ub, agap = 20.057467052264656, rgap = 0.004349850428953793
 OOM-Killed
 
+amd@amd:~/julia_projects/uc/Uc2$ julia --project=. --threads=254,2 Script.jl
+   julia> SEEDi = 5, memory = 405.7595329284668 GiB
+s= 3110
+s= 3235
+s= 4079
+JuMP_Model: 1328.050861 seconds (85.16 G allocations: 2.466 TiB, 80.02% gc time, 159 lock conflicts, 114.33% compilation time: <1% of which was recompilation)
+Mem used in JuMP Model> 33.993587493896484 GiB
+lb = 3.10312e+03
+ini_lb!: 479.030651 seconds (660.01 k allocations: 33.152 MiB, 66 lock conflicts, 6.77% compilation time)
+Mem used in ini_lb> 240.33697891235352 GiB
+lb = 3.10312e+03
+s=3147, vio=-4.522e-01
+lb = 4.65718e+03
+Algo3: 4467.397696 seconds (1.02 M allocations: 56.509 MiB, 5165 lock conflicts, 0.41% compilation time)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 34013 rows, 6163 columns and 2312806 nonzeros (Min)
+Model fingerprint: 0x2cc2c137
+Model has 6163 linear objective coefficients
+Variable types: 6096 continuous, 67 integer (67 binary)
+Coefficient statistics:
+  Matrix range     [1e-05, 7e+02]
+  Objective range  [2e-04, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [6e+00, 6e+03]
+
+Found heuristic solution: objective 5050.7728101
+Found heuristic solution: objective 5050.7728101
+Presolve added 0 rows and 48 columns
+Presolve removed 68 rows and 0 columns
+Presolve time: 3.30s
+Presolved: 33945 rows, 6211 columns, 1870813 nonzeros
+Variable types: 6133 continuous, 78 integer (67 binary)
+Found heuristic solution: objective 5039.9230361
+Root relaxation presolved: 33945 rows, 6211 columns, 1870813 nonzeros
+
+Root relaxation: objective 4.657184e+03, 13077 iterations, 15.55 seconds (25.20 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4657.18414    0   40 5039.92304 4657.18414  7.59%     -   21s
+H    0     0                    4818.8725336 4657.18414  3.36%     -   21s
+H    0     0                    4657.5336113 4657.18414  0.01%     -   22s
+    24    22 4657.36502   15   32 4657.53361 4657.29318  0.01%   747  206s
+    29    25 4657.53357   19   28 4657.53361 4657.29318  0.01%   746  213s
+
+Cutting planes:
+  MIR: 477
+  RLT: 1
+
+Explored 30 nodes (37657 simplex iterations) in 213.33 seconds (234.92 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 4657.53 4657.75 
+No other solutions better than 4657.75
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.657533611278e+03, best bound 4.657293180953e+03, gap 0.0052%
+
+User-callback calls 67442, time in user-callback 0.02 sec
+eval_MIP_Runtime = 213.32913613319397
+Sol=1: lb = 4657.293180952932 < 4671.456175310248 = ub, agap = 14.162994357316165, rgap = 0.003031815739205891
+Sol=2: lb = 4657.293180952932 < 4671.628170941876 = ub, agap = 14.334989988944471, rgap = 0.003068521180283555
+final_eval: 2825.715850 seconds (766.33 k allocations: 38.806 MiB, 32 lock conflicts, 0.17% compilation time)
+ending memory = 1.8805007934570312 GiB
