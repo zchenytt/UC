@@ -32,19 +32,24 @@ fig
 
 
 import JLD2
-a = JLD2.load("algo3data0.jld2");
-
-subtxs = a["subtxs"];
-subgapys = a["subgapys"];
-msttxs = a["msttxs"]; #
-mstlbys = a["mstlbys"]; #
-mstrotys = a["mstrotys"]; #
-mstroiys = a["mstroiys"]; #
-mstncys = a["mstncys"];
-map(length, (subtxs, subgapys, msttxs, mstlbys, mstrotys, mstroiys, mstncys));
-
 using CairoMakie
-f = Figure(size=(500,500), figure_padding = 1.);
+
+a = JLD2.load("algo3data0.jld2");
+msttxs = a["msttxs"];
+mstroiys = a["mstroiys"];
+mstlbys = a["mstlbys"];
+mstrotys = a["mstrotys"];
+subtxs = a["subtxs"];
+subrotys = a["subrotys"];
+subgapys = a["subgapys"];
+subvioys = a["subvioys"];
+subVμys = a["subVμys"];
+map(length, (msttxs, mstroiys, mstlbys, mstrotys, subtxs, subrotys, subgapys, subvioys, subVμys))
+extrema(msttxs)
+extrema(subtxs)
+for (i,e)=enumerate(subgapys) e < 1e-6 && (subgapys[i] = 1e-6) end
+
+f = Figure();
 ax1 = Axis(f[1, 1], 
     ylabel = "Master Lb",
     ylabelcolor=:snow4, 
@@ -57,35 +62,90 @@ ax2 = Axis(f[1, 1],
     ylabelcolor=:green, 
     yticklabelcolor = :green,
     ylabelsize = 11,
-    yaxisposition = :right
+    yaxisposition = :right,
+    xticksvisible=false, 
+    xticklabelsvisible=false
 );hidespines!(ax2);hidexdecorations!(ax2);
+scatter!(ax1, msttxs, mstlbys, color = :snow4, markersize=1.5);
+scatter!(ax2, msttxs, mstrotys, color = :green, markersize=1.5);
 ax3 = Axis(f[2, 1];
+    ylabel = "Master Lb (local)",
+    ylabelcolor = :snow4,
+    yticklabelcolor = :snow4,
+    ylabelsize = 13,
+    xticksvisible=false,
+    xticklabelsvisible=false
+);
+ax4 = Axis(f[2, 1];
     ylabel = "Master Reoptimize #Iter",
     ylabelcolor = :coral,
     yticklabelcolor = :coral,
     ylabelsize = 13,
-    xticksvisible=false,
     yaxisposition = :right,
-    xticklabelsvisible=false
-);hidespines!(ax3);hidexdecorations!(ax3);
-ax4 = Axis(f[2, 1];
-    ylabel = "#Separating Cuts",
-    ylabelcolor=:blue, 
-    yticklabelcolor = :blue,
     xticksvisible=false, 
     xticklabelsvisible=false
-);
+);hidespines!(ax4);hidexdecorations!(ax4);
+scatter!(ax3, msttxs, mstlbys, color = :snow4, markersize=1.5);
+ylims!(ax3, 27000., 28000.)
+scatter!(ax4, msttxs, mstroiys, color = :coral, markersize=1.5);
 ax5 = Axis(f[3, 1];
     ylabel = "Subproblem Terminating Gap",
     ylabelsize = 13,
     yscale = log10,
-    xticksvisible = false,
+    ylabelcolor = :goldenrod2,
+    yticklabelcolor = :goldenrod2,
+    xticksvisible=false, 
+    xticklabelsvisible=false
+);
+ax6 = Axis(f[4, 1];
+    ylabel = "Subproblem Reoptimize Time (s)",
+    ylabelcolor = :blueviolet,    
+    yticklabelcolor = :blueviolet,
+    ylabelsize = 13,
+    xticksvisible=false, 
+    xticklabelsvisible=false
+)
+ax7 = Axis(f[5,1];
+    ylabel = "vio",
+    ylabelcolor = :red,
+    yticklabelcolor = :red,
+    ylabelsize = 13,
+    xticksvisible=false, 
+    xticklabelsvisible=false
+)
+ax8 = Axis(f[5,1];
+    ylabel = "Subproblem Vμ",
+    ylabelcolor = :blue,
+    yticklabelcolor = :blue,
+    yaxisposition = :right,
+    ylabelsize = 13,
+    xticksvisible=false, 
+    xticklabelsvisible=false
+); hidespines!(ax8); hidexdecorations!(ax8);
+ax9 = Axis(f[6, 1];
+    ylabel = "vio",
+    ylabelcolor = :red,
+    yticklabelcolor = :red,
+    ylabelsize = 13,
     xlabel = "Runtime of Algorithm 3 (s) (x-axis is shared)",
 );
-lines!(ax1, msttxs, mstlbys, color = :snow4);
-scatter!(ax2, msttxs, mstrotys, color = :green, markersize=1.5);
-scatter!(ax3, msttxs, mstroiys, color = :coral, markersize=1.5);
-lines!(ax4, msttxs, mstncys, color = :blue);
+ax10 = Axis(f[6,1];
+    ylabel = "Subproblem Vμ",
+    ylabelcolor = :blue,
+    yticklabelcolor = :blue,
+    yaxisposition = :right,
+    ylabelsize = 13,
+    xticksvisible=false, 
+    xticklabelsvisible=false
+); hidespines!(ax10); hidexdecorations!(ax10);
 scatter!(ax5, subtxs, subgapys, color = :goldenrod2, markersize=0.9);
+scatter!(ax6, subtxs, subrotys, color = :blueviolet, markersize=1.5);
+scatter!(ax7, subtxs, subvioys, color = :red, markersize=1.2);
+scatter!(ax8, subtxs, subVμys, color = :blue, markersize=0.7);
+scatter!(ax9, subtxs, subvioys, color = :red, markersize=1.2);
+scatter!(ax10, subtxs, subVμys, color = :blue, markersize=0.7);
+ylims!(ax9, 0., 900.);
+ylims!(ax10, 0., 900.);
 f
-save("algo3plot3.pdf", f)
+
+save("algo3plot3.png", f)
