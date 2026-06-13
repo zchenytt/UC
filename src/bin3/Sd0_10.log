@@ -1,0 +1,1467 @@
+amd@amd:~/julia_projects/uc/Uc2$ julia --project=. --threads=255,1 Script.jl
+   julia> SEEDi=0, S=7000, NP=255, memory=494.17285919189453 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 65
+s= 1269
+s= 1833
+s= 2652
+s= 3090
+s= 4023
+s= 6458
+JuMP Modeling sub vec: 1582.012374 seconds (93.77 G allocations: 2.570 TiB, 87.41% gc time, 147 lock conflicts, 57.87% compilation time: <1% of which was recompilation)
+lb = -1.27304e+04
+ini_lb!: 418.341073 seconds (853.78 k allocations: 42.662 MiB, 910 lock conflicts, 7.13% compilation time)
+lb = -1.27304e+04
+ȷ=1, C=1999, ro=3.7e-02, rs=3.6e+01, Vμ=6.0e+03
+ȷ=1, C=4813, ro=4.3e-02, rs=1.2e+02, Vμ=1.4e+04
+s=2498, vio=8.103e+02
+s=4630, vio=4.970e+02
+ȷ=5, C=11351, ro=1.1e-01, rs=3.7e+02, Vμ=2.6e+02
+ȷ=9, C=21564, ro=6.4e-01, rs=9.4e+02, Vμ=1.4e+02
+s=6249, vio=3.517e+01
+s=188, vio=2.613e+01
+s=1492, vio=1.513e+01
+s=1617, vio=1.576e+01
+s=2987, vio=2.239e+01
+roΣ = 2675.3853480815887
+lb = 2.77996e+04
+Algo3: 3741.899705 seconds (1.80 M allocations: 101.967 MiB, 21977 lock conflicts, 0.40% compilation time)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57335 rows, 7065 columns and 3784110 nonzeros (Min)
+Model fingerprint: 0x9b9111ea
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 65 integer (65 binary)
+Coefficient statistics:
+  Matrix range     [2e-05, 7e+03]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [4e+04, 6e+04]
+
+Found heuristic solution: objective 35125.709662
+Found heuristic solution: objective 35125.709662
+Presolve time: 4.64s
+Presolved: 57335 rows, 7065 columns, 2797388 nonzeros
+Variable types: 7000 continuous, 65 integer (65 binary)
+Found heuristic solution: objective 34864.845654
+Root relaxation presolved: 57335 rows, 7065 columns, 2797388 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.7228916e+04   1.049497e+07   0.000000e+00      6s
+    4102    2.7691280e+04   5.730636e+07   0.000000e+00     10s
+    9273    2.7789380e+04   5.520041e+05   0.000000e+00     15s
+   11219    2.7795439e+04   2.276470e+04   0.000000e+00     20s
+   13026    2.7797633e+04   5.661786e+04   0.000000e+00     25s
+   14891    2.7798901e+04   5.797717e+03   0.000000e+00     30s
+   16577    2.7799436e+04   8.924004e+01   0.000000e+00     35s
+   18327    2.7799599e+04   1.394512e+02   0.000000e+00     40s
+   19381    2.7799616e+04   0.000000e+00   0.000000e+00     43s
+
+Root relaxation: objective 2.779962e+04, 19381 iterations, 37.74 seconds (56.70 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 27799.6163    0   28 34864.8457 27799.6163  20.3%     -   43s
+H    0     0                    27942.277579 27799.6163  0.51%     -   44s
+H    0     0                    27942.253922 27799.6163  0.51%     -   44s
+H    0     0                    27876.642208 27799.6163  0.28%     -   45s
+H    0     0                    27801.444897 27799.6163  0.01%     -   46s
+     0     0 27799.6853    0   37 27801.4449 27799.6853  0.01%     -   58s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 300
+  RLT: 1
+
+Explored 1 nodes (21510 simplex iterations) in 60.02 seconds (85.84 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 27801.4 27801.6 
+No other solutions better than 27801.6
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.780144489720e+04, best bound 2.779968534900e+04, gap 0.0063%
+
+User-callback calls 6278, time in user-callback 0.00 sec
+eval_MIP_Runtime = 60.029136180877686
+Sol=1: lb = 27799.68534899925 < 27810.893924811866 = ub, agap = 11.20857581261589, rgap = 0.00040302824651803113
+final_eval: 392.508221 seconds (640.82 k allocations: 32.637 MiB, 37 lock conflicts, 1.05% compilation time)
+ending vioMean=12.61230445536006, Extrema=(4.0, 27.986777058404186), Median=12.431010288418292
+ending memory=151.2010726928711GiB
+   julia> SEEDi=1, S=7000, NP=255, memory=151.2010726928711 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 72
+s=  550
+s= 2192
+s= 3216
+s= 5061
+s= 5041
+JuMP Modeling sub vec: 1472.016676 seconds (93.81 G allocations: 2.570 TiB, 87.64% gc time, 77 lock conflicts, 0.00% compilation time: 100% of which was recompilation)
+lb = -3.68972e+04
+ini_lb!: 470.825886 seconds (123.20 k allocations: 6.463 MiB, 514 lock conflicts)
+lb = -3.68972e+04
+ȷ=3, C=2654, ro=5.3e-02, rs=5.5e+01, Vμ=8.0e+03
+s=4243, vio=3.997e+04
+ȷ=1, C=4963, ro=6.0e-02, rs=1.3e+02, Vμ=1.5e+04
+ȷ=1, C=5394, ro=6.0e-02, rs=1.4e+02, Vμ=1.6e+04
+s=1247, vio=6.193e+02
+ȷ=10, C=14777, ro=4.7e-01, rs=6.3e+02, Vμ=2.0e+02
+s=4024, vio=2.757e+02
+s=3463, vio=7.428e+01
+s=6651, vio=8.126e+01
+s=6091, vio=3.559e+01
+s=4848, vio=4.327e+01
+roΣ = 3066.1786675453186
+lb = 4.01120e+03
+Algo3: 3930.617203 seconds (695.37 k allocations: 47.557 MiB, 23559 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57324 rows, 7072 columns and 4184651 nonzeros (Min)
+Model fingerprint: 0x70e12614
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 72 integer (72 binary)
+Coefficient statistics:
+  Matrix range     [3e-06, 4e+04]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 3e+04]
+
+Found heuristic solution: objective 26415.712347
+Found heuristic solution: objective 26415.712347
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 3 rows and 5 columns
+Presolve time: 6.97s
+Presolved: 57327 rows, 7077 columns, 3042238 nonzeros
+Variable types: 7002 continuous, 75 integer (72 binary)
+Found heuristic solution: objective 26208.562589
+Root relaxation presolved: 57327 rows, 7077 columns, 3042238 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -7.3087051e+07   2.280461e+11   0.000000e+00      9s
+     598    3.7653834e+03   8.806911e+05   0.000000e+00     10s
+    5263    4.0001063e+03   3.825032e+05   0.000000e+00     15s
+    7348    4.0070736e+03   1.037137e+05   0.000000e+00     20s
+    9158    4.0096329e+03   2.702846e+03   0.000000e+00     25s
+   10686    4.0107050e+03   1.173135e+04   0.000000e+00     30s
+   12076    4.0111846e+03   2.703593e+04   0.000000e+00     35s
+   13456    4.0114002e+03   1.116503e+04   0.000000e+00     40s
+   14986    4.0115057e+03   1.138778e+02   0.000000e+00     45s
+   15808    4.0115214e+03   0.000000e+00   0.000000e+00     48s
+
+Root relaxation: objective 4.011521e+03, 15808 iterations, 39.02 seconds (61.51 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4011.52143    0   39 26208.5626 4011.52143  84.7%     -   48s
+H    0     0                    26193.102177 4011.52143  84.7%     -   49s
+H    0     0                    4053.4601261 4011.52143  1.03%     -   50s
+     0     0 4012.30379    0   43 4053.46013 4012.30379  1.02%     -   71s
+     0     0 4013.02011    0   45 4053.46013 4013.02011  1.00%     -   79s
+     0     0 4013.40092    0   45 4053.46013 4013.40092  0.99%     -   85s
+     0     0 4013.93940    0   44 4053.46013 4013.93940  0.97%     -   91s
+     0     0 4014.29407    0   44 4053.46013 4014.29407  0.97%     -   95s
+     0     0 4014.72766    0   45 4053.46013 4014.72766  0.96%     -  100s
+     0     0 4015.03433    0   46 4053.46013 4015.03433  0.95%     -  105s
+     0     0 4015.33818    0   43 4053.46013 4015.33818  0.94%     -  110s
+     0     0 4015.59069    0   42 4053.46013 4015.59069  0.93%     -  113s
+     0     0 4015.94859    0   42 4053.46013 4015.94859  0.93%     -  117s
+     0     0 4016.11437    0   42 4053.46013 4016.11437  0.92%     -  122s
+     0     0 4016.19917    0   42 4053.46013 4016.19917  0.92%     -  125s
+     0     0 4016.23468    0   42 4053.46013 4016.23468  0.92%     -  127s
+     0     0 4016.26739    0   43 4053.46013 4016.26739  0.92%     -  129s
+     0     0 4016.29234    0   42 4053.46013 4016.29234  0.92%     -  131s
+     0     0 4016.31188    0   40 4053.46013 4016.31188  0.92%     -  133s
+     0     0 4016.33711    0   41 4053.46013 4016.33711  0.92%     -  135s
+     0     0 4016.35602    0   41 4053.46013 4016.35602  0.92%     -  136s
+     0     0 4016.37055    0   41 4053.46013 4016.37055  0.92%     -  138s
+     0     0 4016.38436    0   41 4053.46013 4016.38436  0.91%     -  139s
+     0     0 4016.39283    0   42 4053.46013 4016.39283  0.91%     -  140s
+     0     0 4016.40365    0   42 4053.46013 4016.40365  0.91%     -  142s
+     0     0 4016.40988    0   41 4053.46013 4016.40988  0.91%     -  143s
+     0     0 4016.41427    0   43 4053.46013 4016.41427  0.91%     -  144s
+     0     0 4016.41763    0   42 4053.46013 4016.41763  0.91%     -  145s
+     0     0 4016.42067    0   43 4053.46013 4016.42067  0.91%     -  147s
+     0     0 4016.42294    0   43 4053.46013 4016.42294  0.91%     -  148s
+     0     0 4016.42452    0   43 4053.46013 4016.42452  0.91%     -  149s
+     0     0 4016.42590    0   43 4053.46013 4016.42590  0.91%     -  149s
+     0     0 4016.42713    0   43 4053.46013 4016.42713  0.91%     -  150s
+     0     0 4016.42826    0   43 4053.46013 4016.42826  0.91%     -  151s
+     0     0 4016.42916    0   44 4053.46013 4016.42916  0.91%     -  152s
+     0     0 4016.42995    0   44 4053.46013 4016.42995  0.91%     -  153s
+     0     0 4016.43053    0   44 4053.46013 4016.43053  0.91%     -  154s
+     0     0 4016.43098    0   44 4053.46013 4016.43098  0.91%     -  154s
+     0     0 4016.43130    0   44 4053.46013 4016.43130  0.91%     -  155s
+     0     0 4016.68497    0   49 4053.46013 4016.68497  0.91%     -  174s
+H    0     0                    4023.2736941 4016.68499  0.16%     -  175s
+H    0     0                    4022.9647001 4016.68499  0.16%     -  176s
+     0     0 4016.78607    0   46 4022.96470 4016.78607  0.15%     -  182s
+     0     0 4016.86665    0   46 4022.96470 4016.86665  0.15%     -  186s
+     0     0 4016.94170    0   45 4022.96470 4016.94170  0.15%     -  189s
+     0     0 4017.01311    0   46 4022.96470 4017.01311  0.15%     -  193s
+     0     0 4017.08115    0   47 4022.96470 4017.08115  0.15%     -  197s
+     0     0 4017.14771    0   48 4022.96470 4017.14771  0.14%     -  200s
+     0     0 4017.21121    0   48 4022.96470 4017.21121  0.14%     -  203s
+     0     0 4017.27317    0   48 4022.96470 4017.27317  0.14%     -  207s
+     0     0 4017.33344    0   48 4022.96470 4017.33344  0.14%     -  209s
+     0     0 4017.39085    0   47 4022.96470 4017.39085  0.14%     -  212s
+     0     0 4017.44688    0   46 4022.96470 4017.44688  0.14%     -  214s
+     0     0 4017.50014    0   46 4022.96470 4017.50014  0.14%     -  217s
+     0     0 4017.58829    0   47 4022.96470 4017.58829  0.13%     -  222s
+     0     0 4017.62799    0   46 4022.96470 4017.62799  0.13%     -  225s
+     0     0 4017.66428    0   46 4022.96470 4017.66428  0.13%     -  227s
+     0     0 4017.69507    0   46 4022.96470 4017.69507  0.13%     -  230s
+     0     0 4017.69584    0   46 4022.96470 4017.69584  0.13%     -  231s
+     0     0 4017.69605    0   46 4022.96470 4017.69605  0.13%     -  232s
+     0     0 4017.71601    0   46 4022.96470 4017.71601  0.13%     -  260s
+H    0     0                    4020.8271157 4017.71610  0.08%     -  262s
+     0     0 4017.71996    0   46 4020.82712 4017.71996  0.08%     -  265s
+     0     0 4017.72097    0   46 4020.82712 4017.72097  0.08%     -  266s
+     0     0 4017.72150    0   46 4020.82712 4017.72150  0.08%     -  267s
+     0     0 4017.72602    0   48 4020.82712 4017.72602  0.08%     -  293s
+     0     0 4017.72739    0   48 4020.82712 4017.72739  0.08%     -  297s
+     0     0 4017.72796    0   48 4020.82712 4017.72796  0.08%     -  298s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 301
+  RLT: 6
+  Relax-and-lift: 1
+
+Explored 1 nodes (47002 simplex iterations) in 300.05 seconds (436.26 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 4020.83 4022.94 
+
+Time limit reached
+Best objective 4.020827115675e+03, best bound 4.017727960806e+03, gap 0.0771%
+
+User-callback calls 50332, time in user-callback 0.02 sec
+eval_MIP_Runtime = 300.0522038936615
+Sol=1: lb = 4017.7279608058516 < 4039.8211887209386 = ub, agap = 22.093227915087027, rgap = 0.005468862824119708
+final_eval: 731.678441 seconds (100.83 k allocations: 4.853 MiB, 55 lock conflicts)
+ending vioMean=18.1159689244057, Extrema=(6.1176917878810855, 39.821826435727644), Median=18.358356871403316
+ending memory=117.08859634399414GiB
+   julia> SEEDi=2, S=7000, NP=255, memory=117.08859634399414 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 60
+s= 3311
+JuMP Modeling sub vec: 1401.182172 seconds (93.65 G allocations: 2.560 TiB, 88.85% gc time, 86 lock conflicts)
+lb = -1.17409e+04
+ini_lb!: 382.993728 seconds (123.20 k allocations: 6.463 MiB, 447 lock conflicts)
+lb = -1.17409e+04
+ȷ=3, C=2143, ro=8.4e-02, rs=5.3e+01, Vμ=2.7e+03
+ȷ=1, C=3819, ro=4.5e-02, rs=1.0e+02, Vμ=4.7e+03
+ȷ=1, C=6208, ro=5.6e-02, rs=1.8e+02, Vμ=7.1e+03
+ȷ=1, C=6465, ro=5.8e-02, rs=1.9e+02, Vμ=7.4e+03
+s=793, vio=7.622e+02
+ȷ=1, C=8177, ro=6.9e-02, rs=2.6e+02, Vμ=3.1e+02
+s=2590, vio=6.016e+02
+ȷ=3, C=10616, ro=1.1e-01, rs=3.6e+02, Vμ=2.7e+02
+ȷ=1, C=12087, ro=9.9e-02, rs=4.2e+02, Vμ=2.4e+02
+s=6444, vio=2.158e+02
+ȷ=5, C=17813, ro=1.8e-01, rs=7.1e+02, Vμ=1.5e+02
+s=6039, vio=2.961e+02
+ȷ=12, C=25852, ro=4.0e-01, rs=1.1e+03, Vμ=8.0e+01
+s=2857, vio=8.670e+01
+s=1600, vio=1.101e+02
+s=1899, vio=5.982e+01
+s=6992, vio=5.433e+01
+s=1329, vio=3.879e+01
+roΣ = 2704.185021877289
+lb = 4.09684e+03
+Algo3: 3366.348770 seconds (703.65 k allocations: 48.006 MiB, 24072 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57461 rows, 7060 columns and 3505075 nonzeros (Min)
+Model fingerprint: 0x3ba0942c
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 60 integer (60 binary)
+Coefficient statistics:
+  Matrix range     [2e-06, 2e+03]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 1e+04]
+
+Found heuristic solution: objective 9810.8843869
+Found heuristic solution: objective 9810.8843869
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 5 rows and 8 columns
+Presolve time: 6.33s
+Presolved: 57466 rows, 7068 columns, 2869498 nonzeros
+Variable types: 7003 continuous, 65 integer (60 binary)
+Found heuristic solution: objective 9696.3559091
+Root relaxation presolved: 57466 rows, 7068 columns, 2869498 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -1.5927243e+07   1.329268e+11   0.000000e+00      8s
+    1570    3.9303753e+03   1.482373e+09   0.000000e+00     10s
+    5662    4.0536646e+03   1.672957e+07   0.000000e+00     15s
+    8303    4.0829752e+03   4.235354e+05   0.000000e+00     20s
+   10249    4.0911569e+03   3.703280e+04   0.000000e+00     25s
+   11778    4.0938418e+03   1.303114e+04   0.000000e+00     30s
+   13311    4.0953631e+03   7.841334e+04   0.000000e+00     35s
+   14771    4.0961049e+03   4.857289e+04   0.000000e+00     41s
+   15921    4.0964210e+03   2.757348e+04   0.000000e+00     45s
+   17311    4.0966964e+03   7.263662e+02   0.000000e+00     50s
+   18551    4.0968115e+03   2.375989e+02   0.000000e+00     55s
+   19910    4.0968441e+03   0.000000e+00   0.000000e+00     59s
+
+Root relaxation: objective 4.096844e+03, 19910 iterations, 51.62 seconds (80.79 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4096.84413    0   41 9696.35591 4096.84413  57.7%     -   60s
+H    0     0                    4112.0146905 4096.84413  0.37%     -   61s
+H    0     0                    4099.7951565 4096.84413  0.07%     -   62s
+     0     0 4096.89732    0   47 4099.79516 4096.89732  0.07%     -   77s
+H    0     0                    4098.9895448 4096.89738  0.05%     -   78s
+     0     0 4096.91076    0   47 4098.98954 4096.91076  0.05%     -   83s
+     0     0 4096.91803    0   48 4098.98954 4096.91803  0.05%     -   85s
+     0     0 4096.92175    0   47 4098.98954 4096.92175  0.05%     -   87s
+     0     0 4096.92440    0   47 4098.98954 4096.92440  0.05%     -   88s
+     0     0 4096.92612    0   47 4098.98954 4096.92612  0.05%     -   90s
+     0     0 4096.92810    0   47 4098.98954 4096.92810  0.05%     -   91s
+     0     0 4096.92982    0   47 4098.98954 4096.92982  0.05%     -   92s
+     0     0 4096.93155    0   47 4098.98954 4096.93155  0.05%     -   93s
+     0     0 4096.93251    0   47 4098.98954 4096.93251  0.05%     -   94s
+     0     0 4096.93322    0   46 4098.98954 4096.93322  0.05%     -   94s
+     0     0 4096.93381    0   47 4098.98954 4096.93381  0.05%     -   95s
+     0     0 4096.93419    0   47 4098.98954 4096.93419  0.05%     -   96s
+     0     0 4096.94283    0   49 4098.98954 4096.94283  0.05%     -  133s
+     0     0 4096.94538    0   49 4098.98954 4096.94538  0.05%     -  136s
+     0     0 4096.94645    0   49 4098.98954 4096.94645  0.05%     -  137s
+     0     0 4096.94703    0   49 4098.98954 4096.94703  0.05%     -  138s
+     0     0 4096.94764    0   49 4098.98954 4096.94764  0.05%     -  139s
+     0     0 4096.94816    0   49 4098.98954 4096.94816  0.05%     -  140s
+     0     0 4096.94861    0   49 4098.98954 4096.94861  0.05%     -  140s
+     0     0 4096.94888    0   49 4098.98954 4096.94888  0.05%     -  141s
+     0     0 4096.95244    0   49 4098.98954 4096.95244  0.05%     -  181s
+     0     0 4096.95345    0   49 4098.98954 4096.95345  0.05%     -  183s
+     0     0 4096.95375    0   49 4098.98954 4096.95375  0.05%     -  184s
+     0     0 4096.95506    0   49 4098.98954 4096.95506  0.05%     -  222s
+     0     0 4096.95534    0   49 4098.98954 4096.95534  0.05%     -  224s
+     0     0 4096.95582    0   49 4098.98954 4096.95582  0.05%     -  261s
+     0     0 4096.95589    0   49 4098.98954 4096.95589  0.05%     -  262s
+     0     0 4096.95638    0   49 4098.98954 4096.95638  0.05%     -  299s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 305
+  RLT: 30
+
+Explored 1 nodes (25602 simplex iterations) in 300.03 seconds (239.95 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 4098.99 4099.04 
+
+Time limit reached
+Best objective 4.098989544766e+03, best bound 4.096956386677e+03, gap 0.0496%
+
+User-callback calls 147524, time in user-callback 0.04 sec
+eval_MIP_Runtime = 300.03292083740234
+Sol=1: lb = 4096.956386677218 < 4121.172108020471 = ub, agap = 24.21572134325288, rgap = 0.0058759306111300594
+final_eval: 639.309582 seconds (197.69 k allocations: 7.809 MiB, 57 lock conflicts)
+ending vioMean=18.84741801868695, Extrema=(5.517798267414037, 36.60725969401642), Median=17.76929591511032
+ending memory=131.55806350708008GiB
+   julia> SEEDi=3, S=7000, NP=255, memory=131.5583038330078 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 63
+s=  955
+s= 1606
+s= 4133
+s= 6864
+JuMP Modeling sub vec: 1462.186074 seconds (93.79 G allocations: 2.571 TiB, 89.03% gc time, 99 lock conflicts)
+lb = -7.96668e+02
+ini_lb!: 451.400393 seconds (123.20 k allocations: 6.463 MiB, 303 lock conflicts)
+lb = -7.96668e+02
+ȷ=1, C=2431, ro=3.9e-02, rs=5.9e+01, Vμ=1.1e+03
+ȷ=2, C=5159, ro=5.2e-02, rs=1.5e+02, Vμ=2.1e+03
+ȷ=1, C=5594, ro=5.3e-02, rs=1.7e+02, Vμ=2.2e+03
+s=3811, vio=5.125e+02
+s=5863, vio=2.236e+02
+s=3486, vio=3.869e+02
+ȷ=1, C=10883, ro=1.0e-01, rs=4.3e+02, Vμ=2.4e+02
+ȷ=1, C=12445, ro=1.1e-01, rs=5.1e+02, Vμ=2.5e+02
+s=6150, vio=2.778e+02
+s=4513, vio=2.642e+02
+s=4472, vio=1.169e+02
+s=4616, vio=5.524e+01
+s=4825, vio=6.158e+01
+s=3912, vio=9.208e+01
+s=2400, vio=9.542e+00
+roΣ = 3130.7089080810547
+lb = 4.14197e+03
+Algo3: 3919.284318 seconds (693.81 k allocations: 47.473 MiB, 22609 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57187 rows, 7063 columns and 3659806 nonzeros (Min)
+Model fingerprint: 0x167fff92
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 63 integer (63 binary)
+Coefficient statistics:
+  Matrix range     [6e-06, 5e+03]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 5e+03]
+
+Found heuristic solution: objective 4712.3062569
+Found heuristic solution: objective 4712.3062569
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve time: 5.69s
+Presolved: 57187 rows, 7063 columns, 2820859 nonzeros
+Variable types: 7000 continuous, 63 integer (63 binary)
+Found heuristic solution: objective 4550.3885412
+Root relaxation presolved: 57187 rows, 7063 columns, 2820859 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -2.2425938e+06   1.456379e+10   0.000000e+00      7s
+    2466    4.0959762e+03   1.581258e+08   0.000000e+00     10s
+    5107    4.1259644e+03   6.630018e+06   0.000000e+00     15s
+    6905    4.1323972e+03   1.196691e+07   0.000000e+00     20s
+    8564    4.1359474e+03   1.065948e+07   0.000000e+00     25s
+   10115    4.1384166e+03   4.347480e+04   0.000000e+00     30s
+   11637    4.1402469e+03   8.959836e+04   0.000000e+00     35s
+   12986    4.1411114e+03   2.719124e+05   0.000000e+00     40s
+   14436    4.1416413e+03   4.091844e+03   0.000000e+00     45s
+   15596    4.1418427e+03   5.600113e+03   0.000000e+00     50s
+   17076    4.1419565e+03   4.508321e+02   0.000000e+00     55s
+   18083    4.1419731e+03   0.000000e+00   0.000000e+00     59s
+
+Root relaxation: objective 4.141973e+03, 18083 iterations, 52.66 seconds (76.57 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4141.97305    0   37 4550.38854 4141.97305  8.98%     -   59s
+H    0     0                    4279.1892001 4141.97305  3.21%     -   60s
+H    0     0                    4150.4658602 4141.97305  0.20%     -   60s
+H    0     0                    4143.3229672 4141.97305  0.03%     -   61s
+     0     0 4142.00005    0   43 4143.32297 4142.00005  0.03%     -   75s
+     0     0 4142.00492    0   45 4143.32297 4142.00492  0.03%     -   79s
+     0     0 4142.00655    0   45 4143.32297 4142.00655  0.03%     -   80s
+     0     0 4142.00754    0   45 4143.32297 4142.00754  0.03%     -   81s
+     0     0 4142.00835    0   45 4143.32297 4142.00835  0.03%     -   82s
+     0     0 4142.00887    0   45 4143.32297 4142.00887  0.03%     -   83s
+     0     0 4142.00913    0   45 4143.32297 4142.00913  0.03%     -   84s
+     0     0 4142.01100    0   46 4143.32297 4142.01100  0.03%     -  120s
+     0     0 4142.01134    0   46 4143.32297 4142.01134  0.03%     -  122s
+     0     0 4142.01252    0   46 4143.32297 4142.01252  0.03%     -  160s
+     0     0 4142.01261    0   46 4143.32297 4142.01261  0.03%     -  164s
+     0     0 4142.01318    0   47 4143.32297 4142.01318  0.03%     -  203s
+     0     0 4142.01323    0   47 4143.32297 4142.01323  0.03%     -  205s
+     0     0 4142.01351    0   47 4143.32297 4142.01351  0.03%     -  242s
+     0     0 4142.01356    0   47 4143.32297 4142.01356  0.03%     -  244s
+     0     0 4142.01360    0   47 4143.32297 4142.01360  0.03%     -  279s
+     0     0 4142.01360    0   47 4143.32297 4142.01360  0.03%     -  279s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 167
+  RLT: 11
+
+Explored 1 nodes (20937 simplex iterations) in 300.04 seconds (242.02 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 4143.32 4143.41 
+
+Time limit reached
+Best objective 4.143322967235e+03, best bound 4.142013604417e+03, gap 0.0316%
+
+User-callback calls 118899, time in user-callback 0.03 sec
+eval_MIP_Runtime = 300.0469181537628
+Sol=1: lb = 4142.01360441745 < 4163.191883487989 = ub, agap = 21.178279070539247, rgap = 0.005087029294646815
+final_eval: 741.446762 seconds (168.97 k allocations: 6.933 MiB, 66 lock conflicts)
+ending vioMean=16.04580923367551, Extrema=(4.692997832745732, 37.183860753811814), Median=15.324768869585228
+ending memory=113.91035842895508GiB
+   julia> SEEDi=4, S=7000, NP=255, memory=113.91035842895508 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 70
+s= 1917
+JuMP Modeling sub vec: 1476.663385 seconds (93.83 G allocations: 2.570 TiB, 89.02% gc time, 140 lock conflicts, 2.78% compilation time)
+lb = -9.34569e+03
+ini_lb!: 470.226068 seconds (123.20 k allocations: 6.463 MiB, 571 lock conflicts)
+lb = -9.34569e+03
+ȷ=1, C=1252, ro=4.2e-02, rs=3.0e+01, Vμ=1.3e+03
+s=1928, vio=1.399e+04
+ȷ=1, C=2720, ro=4.3e-02, rs=7.5e+01, Vμ=2.8e+03
+ȷ=1, C=3648, ro=5.4e-02, rs=1.1e+02, Vμ=3.6e+03
+s=4545, vio=1.199e+04
+ȷ=2, C=10912, ro=1.1e-01, rs=4.5e+02, Vμ=1.5e+02
+s=5226, vio=2.913e+02
+ȷ=2, C=13373, ro=2.0e-01, rs=5.9e+02, Vμ=1.9e+02
+s=5755, vio=1.188e+02
+s=2248, vio=1.519e+02
+s=1233, vio=7.143e+01
+s=5887, vio=5.173e+01
+roΣ = 3128.7586092948914
+lb = 3.81959e+03
+Algo3: 3806.832607 seconds (667.10 k allocations: 45.949 MiB, 23547 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57350 rows, 7070 columns and 4071850 nonzeros (Min)
+Model fingerprint: 0x43f71ab6
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 70 integer (70 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 2e+03]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 2e+04]
+
+Found heuristic solution: objective 16516.485420
+Found heuristic solution: objective 16516.485420
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 8 rows and 23 columns
+Presolve time: 6.79s
+Presolved: 57358 rows, 7093 columns, 3082418 nonzeros
+Variable types: 7015 continuous, 78 integer (70 binary)
+Found heuristic solution: objective 16295.875421
+Root relaxation presolved: 57358 rows, 7093 columns, 3082418 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -5.7100654e+07   2.735735e+11   0.000000e+00     10s
+     630    3.6288357e+03   5.814148e+05   0.000000e+00     10s
+    5130    3.7988548e+03   1.480250e+08   0.000000e+00     15s
+    7076    3.8118942e+03   5.339514e+04   0.000000e+00     20s
+    8605    3.8161329e+03   1.040124e+05   0.000000e+00     25s
+    9794    3.8174616e+03   7.345518e+04   0.000000e+00     30s
+   10964    3.8183436e+03   2.471203e+04   0.000000e+00     36s
+   12014    3.8188554e+03   1.931832e+03   0.000000e+00     41s
+   13134    3.8192242e+03   5.093019e+03   0.000000e+00     46s
+   14124    3.8193953e+03   1.166136e+03   0.000000e+00     50s
+   15274    3.8195168e+03   1.017475e+04   0.000000e+00     55s
+   16574    3.8195805e+03   3.187355e+02   0.000000e+00     60s
+   17249    3.8195875e+03   0.000000e+00   0.000000e+00     63s
+
+Root relaxation: objective 3.819588e+03, 17249 iterations, 54.30 seconds (81.83 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 3819.58753    0   49 16295.8754 3819.58753  76.6%     -   64s
+H    0     0                    16252.662542 3819.58753  76.5%     -   64s
+H    0     0                    3827.6290057 3819.58753  0.21%     -   65s
+H    0     0                    3826.5225072 3819.58753  0.18%     -   67s
+     0     0 3819.60073    0   53 3826.52251 3819.60073  0.18%     -   81s
+H    0     0                    3822.3211650 3819.60075  0.07%     -   83s
+H    0     0                    3822.1748489 3819.60075  0.07%     -   86s
+     0     0 3819.60262    0   54 3822.17485 3819.60262  0.07%     -   88s
+     0     0 3819.60297    0   54 3822.17485 3819.60297  0.07%     -   88s
+     0     0 3819.60361    0   53 3822.17485 3819.60361  0.07%     -  113s
+     0     0 3819.60387    0   53 3822.17485 3819.60387  0.07%     -  115s
+     0     0 3819.60417    0   53 3822.17485 3819.60417  0.07%     -  141s
+     0     0 3819.60429    0   53 3822.17485 3819.60429  0.07%     -  143s
+     0     0 3819.60433    0   53 3822.17485 3819.60433  0.07%     -  168s
+     0     0 3819.60436    0   53 3822.17485 3819.60436  0.07%     -  194s
+     0     0 3819.60455    0   53 3822.17485 3819.60455  0.07%     -  195s
+     0     0 3819.60455    0   53 3822.17485 3819.60455  0.07%     -  223s
+     0     2 3819.60455    0   53 3822.17485 3819.60455  0.07%     -  229s
+     1     3 3819.62246    1   53 3822.17485 3819.60499  0.07%   654  234s
+     2     2     cutoff    1      3822.17485 3819.62250  0.07%   435  236s
+     3     3 3819.63498    2   50 3822.17485 3819.62259  0.07%   548  241s
+     4     2     cutoff    2      3822.17485 3819.63500  0.07%  2241  258s
+     5     3 3819.64003    3   47 3822.17485 3819.63567  0.07%  1857  260s
+     6     2     cutoff    3      3822.17485 3819.64003  0.07%  1675  266s
+    10     4     cutoff    6      3822.17485 3819.64426  0.07%  1746  288s
+    12     6 3819.71080    7   45 3822.17485 3819.64426  0.07%  1638  295s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 66
+  RLT: 10
+
+Explored 16 nodes (38878 simplex iterations) in 300.08 seconds (332.76 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 3822.17 3822.26 
+
+Time limit reached
+Best objective 3.822174848893e+03, best bound 3.819644258326e+03, gap 0.0662%
+
+User-callback calls 82338, time in user-callback 0.03 sec
+eval_MIP_Runtime = 300.08468413352966
+Sol=1: lb = 3819.6442583256207 < 3857.5655749038497 = ub, agap = 37.921316578228925, rgap = 0.009830375101056868
+final_eval: 698.131489 seconds (132.51 k allocations: 5.820 MiB, 44 lock conflicts)
+ending vioMean=27.263862677638883, Extrema=(9.77316162272814, 54.06604619194877), Median=26.724994803986533
+ending memory=119.72977066040039GiB
+   julia> SEEDi=5, S=7000, NP=255, memory=119.72977066040039 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 76
+s= 2923
+s= 3102
+s= 3935
+JuMP Modeling sub vec: 1470.724763 seconds (93.87 G allocations: 2.578 TiB, 89.05% gc time, 93 lock conflicts)
+lb = -3.08580e+05
+ini_lb!: 466.929716 seconds (123.20 k allocations: 6.463 MiB, 607 lock conflicts)
+lb = -3.08580e+05
+ȷ=1, C=749, ro=4.8e-02, rs=1.5e+01, Vμ=1.8e+04
+ȷ=2, C=6363, ro=6.6e-02, rs=2.3e+02, Vμ=1.5e+05
+s=3692, vio=1.195e+04
+ȷ=1, C=8399, ro=1.2e-01, rs=3.2e+02, Vμ=3.5e+02
+ȷ=1, C=8804, ro=9.1e-02, rs=3.4e+02, Vμ=3.3e+02
+s=2837, vio=4.629e+02
+s=1216, vio=5.485e+02
+ȷ=59, C=35486, ro=3.8e+00, rs=2.0e+03, Vμ=4.6e+01
+s=3964, vio=-1.785e+01
+roΣ = 3131.6478991508484
+lb = 2.22996e+04
+Algo3: 4174.235817 seconds (763.23 k allocations: 51.308 MiB, 24255 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57120 rows, 7076 columns and 4396534 nonzeros (Min)
+Model fingerprint: 0xb8e6ba14
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 76 integer (76 binary)
+Coefficient statistics:
+  Matrix range     [4e-06, 2e+05]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [6e+04, 7e+04]
+
+Found heuristic solution: objective 23186.461488
+Found heuristic solution: objective 23186.461488
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 1 rows and 1 columns
+Presolve time: 7.68s
+Presolved: 57121 rows, 7077 columns, 3477574 nonzeros
+Variable types: 7000 continuous, 77 integer (76 binary)
+Found heuristic solution: objective 22473.862504
+Found heuristic solution: objective 22458.213469
+Root relaxation presolved: 57121 rows, 7074 columns, 3366709 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.1667525e+04   1.192106e+07   0.000000e+00     12s
+    2124    2.1959825e+04   2.119256e+05   0.000000e+00     15s
+    5460    2.2161984e+04   1.975441e+05   0.000000e+00     20s
+    7962    2.2257282e+04   2.892554e+05   0.000000e+00     25s
+   10047    2.2281639e+04   1.423133e+05   0.000000e+00     30s
+   11732    2.2288864e+04   4.078909e+04   0.000000e+00     35s
+   13334    2.2292499e+04   3.893578e+03   0.000000e+00     40s
+   14964    2.2295131e+04   3.071981e+04   0.000000e+00     45s
+   16474    2.2296849e+04   1.870568e+05   0.000000e+00     50s
+   18004    2.2297986e+04   3.287259e+03   0.000000e+00     56s
+   19614    2.2298978e+04   3.920191e+04   0.000000e+00     61s
+   21024    2.2299415e+04   3.476140e+06   0.000000e+00     65s
+   22714    2.2299597e+04   3.833151e+01   0.000000e+00     70s
+   23106    2.2299601e+04   0.000000e+00   0.000000e+00     71s
+   23106    2.2299601e+04   0.000000e+00   0.000000e+00     71s
+
+Root relaxation: objective 2.229960e+04, 23106 iterations, 60.48 seconds (96.35 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 22299.6011    0   33 22458.2135 22299.6011  0.71%     -   72s
+H    0     0                    22387.328909 22299.6011  0.39%     -   73s
+H    0     0                    22304.106421 22299.6011  0.02%     -   74s
+     0     0 22299.7328    0   43 22304.1064 22299.7328  0.02%     -   91s
+     0     0 22299.7477    0   43 22304.1064 22299.7477  0.02%     -   97s
+     0     0 22299.7552    0   44 22304.1064 22299.7552  0.02%     -   99s
+     0     0 22299.7582    0   44 22304.1064 22299.7582  0.02%     -  101s
+     0     0 22299.7593    0   43 22304.1064 22299.7593  0.02%     -  102s
+     0     0 22299.7782    0   44 22304.1064 22299.7782  0.02%     -  131s
+H    0     0                    22304.002276 22299.7782  0.02%     -  132s
+     0     0 22299.7820    0   44 22304.0023 22299.7820  0.02%     -  135s
+     0     0 22299.7824    0   44 22304.0023 22299.7824  0.02%     -  136s
+     0     0 22299.7890    0   45 22304.0023 22299.7890  0.02%     -  165s
+     0     0 22299.7906    0   45 22304.0023 22299.7906  0.02%     -  169s
+     0     0 22299.7930    0   45 22304.0023 22299.7930  0.02%     -  198s
+     0     0 22299.7937    0   45 22304.0023 22299.7937  0.02%     -  200s
+     0     0 22299.7941    0   45 22304.0023 22299.7941  0.02%     -  227s
+     0     0 22299.7944    0   45 22304.0023 22299.7944  0.02%     -  255s
+
+Cutting planes:
+  MIR: 449
+
+Explored 1 nodes (29771 simplex iterations) in 300.06 seconds (256.16 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 22304 22304 
+
+Time limit reached
+Best objective 2.230400227626e+04, best bound 2.229979438459e+04, gap 0.0189%
+
+User-callback calls 102817, time in user-callback 0.03 sec
+eval_MIP_Runtime = 300.0693588256836
+Sol=1: lb = 22299.794384593766 < 22324.4977448525 = ub, agap = 24.703360258732573, rgap = 0.0011065583889531662
+final_eval: 667.112730 seconds (152.91 k allocations: 6.442 MiB, 43 lock conflicts)
+ending vioMean=19.234655904147818, Extrema=(4.0, 59.587703976798366), Median=18.80834890879578
+ending memory=126.0866813659668GiB
+   julia> SEEDi=6, S=7000, NP=255, memory=126.0866813659668 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 70
+s= 1329
+s= 2992
+s= 6270
+JuMP Modeling sub vec: 1384.124774 seconds (93.79 G allocations: 2.567 TiB, 88.86% gc time, 112 lock conflicts)
+lb = -2.44304e+03
+ini_lb!: 437.818151 seconds (123.20 k allocations: 6.463 MiB, 531 lock conflicts)
+lb = -2.44304e+03
+ȷ=1, C=1157, ro=3.9e-02, rs=2.4e+01, Vμ=6.7e+02
+s=6872, vio=1.053e+03
+s=468, vio=6.520e+02
+s=6807, vio=3.818e+02
+s=17, vio=1.765e+02
+ȷ=4, C=19370, ro=2.9e-01, rs=9.2e+02, Vμ=1.3e+02
+s=1915, vio=1.152e+02
+s=2138, vio=9.131e+01
+s=6334, vio=1.023e+02
+s=5492, vio=2.508e+01
+s=1337, vio=7.355e+01
+s=6801, vio=3.422e+01
+roΣ = 3025.9403686523438
+lb = 3.89859e+03
+Algo3: 3706.782236 seconds (685.07 k allocations: 47.000 MiB, 23937 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57054 rows, 7070 columns and 4050595 nonzeros (Min)
+Model fingerprint: 0xc217bfed
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 70 integer (70 binary)
+Coefficient statistics:
+  Matrix range     [7e-06, 5e+02]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 5e+03]
+
+Found heuristic solution: objective 4882.7808044
+Found heuristic solution: objective 4882.7808044
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 1 rows and 5 columns
+Presolve time: 6.57s
+Presolved: 57055 rows, 7075 columns, 3204433 nonzeros
+Variable types: 7004 continuous, 71 integer (70 binary)
+Found heuristic solution: objective 4769.6571136
+Root relaxation presolved: 57055 rows, 7075 columns, 3204433 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -5.5994199e+06   3.756601e+10   0.000000e+00      9s
+     978    3.8480417e+03   5.659570e+05   0.000000e+00     10s
+    3341    3.8731552e+03   1.023329e+06   0.000000e+00     15s
+    5148    3.8841116e+03   1.495314e+05   0.000000e+00     20s
+    6816    3.8898640e+03   3.935143e+04   0.000000e+00     25s
+    8179    3.8928646e+03   1.738905e+05   0.000000e+00     30s
+    9556    3.8950394e+03   3.793943e+05   0.000000e+00     35s
+   10806    3.8962024e+03   3.879892e+04   0.000000e+00     40s
+   11916    3.8970213e+03   5.904571e+04   0.000000e+00     45s
+   13126    3.8976182e+03   1.009844e+04   0.000000e+00     50s
+   14316    3.8980198e+03   2.073465e+05   0.000000e+00     55s
+   15446    3.8982964e+03   6.163129e+03   0.000000e+00     60s
+   16616    3.8984591e+03   4.327599e+03   0.000000e+00     65s
+   17896    3.8985590e+03   2.762916e+02   0.000000e+00     70s
+   19296    3.8985937e+03   8.506423e-01   0.000000e+00     75s
+   19399    3.8985936e+03   0.000000e+00   0.000000e+00     76s
+
+Root relaxation: objective 3.898594e+03, 19399 iterations, 67.66 seconds (106.83 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 3898.59361    0   40 4769.65711 3898.59361  18.3%     -   76s
+H    0     0                    3909.3330454 3898.59361  0.27%     -   78s
+H    0     0                    3901.3208542 3898.59361  0.07%     -   79s
+     0     0 3898.59617    0   44 3901.32085 3898.59617  0.07%     -   91s
+     0     0 3898.59652    0   45 3901.32085 3898.59652  0.07%     -   95s
+     0     0 3898.59720    0   44 3901.32085 3898.59720  0.07%     -  129s
+     0     0 3898.59724    0   44 3901.32085 3898.59724  0.07%     -  131s
+     0     0 3898.59775    0   45 3901.32085 3898.59775  0.07%     -  167s
+     0     0 3898.59814    0   46 3901.32085 3898.59814  0.07%     -  204s
+     0     0 3898.59823    0   45 3901.32085 3898.59823  0.07%     -  240s
+     0     0 3898.59836    0   45 3901.32085 3898.59836  0.07%     -  242s
+     0     0 3898.59839    0   45 3901.32085 3898.59839  0.07%     -  275s
+     0     2 3898.59859    0   45 3901.32085 3898.59859  0.07%     -  283s
+     1     3 3898.61298    1   43 3901.32085 3898.59878  0.07%   627  288s
+
+Cutting planes:
+  Gomory: 6
+  MIR: 70
+  RLT: 19
+
+Explored 2 nodes (20838 simplex iterations) in 300.04 seconds (254.55 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 3901.32 3901.63 
+
+Time limit reached
+Best objective 3.901320854195e+03, best bound 3.898598782240e+03, gap 0.0698%
+
+User-callback calls 115391, time in user-callback 0.03 sec
+eval_MIP_Runtime = 300.0398008823395
+Sol=1: lb = 3898.598782240248 < 3933.424135400715 = ub, agap = 34.825353160466875, rgap = 0.008853698955838402
+final_eval: 707.833147 seconds (165.43 k allocations: 6.825 MiB, 53 lock conflicts)
+ending vioMean=22.403867774698828, Extrema=(7.004700714671799, 44.961068376811454), Median=21.223310834354493
+ending memory=125.18283081054688GiB
+   julia> SEEDi=7, S=7000, NP=255, memory=125.18283081054688 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 61
+s=  490
+s=  923
+s= 4356
+JuMP Modeling sub vec: 1375.193870 seconds (93.71 G allocations: 2.563 TiB, 88.81% gc time, 122 lock conflicts)
+lb = -5.83992e+02
+ini_lb!: 388.563848 seconds (123.20 k allocations: 6.463 MiB, 374 lock conflicts)
+lb = -5.83992e+02
+ȷ=1, C=5008, ro=4.2e-02, rs=1.2e+02, Vμ=1.9e+03
+ȷ=1, C=6111, ro=3.7e-02, rs=1.6e+02, Vμ=2.2e+03
+s=823, vio=5.812e+02
+s=1574, vio=6.042e+02
+ȷ=2, C=6692, ro=5.0e-02, rs=1.8e+02, Vμ=2.7e+02
+s=613, vio=6.530e+02
+ȷ=1, C=9390, ro=7.6e-02, rs=3.0e+02, Vμ=2.5e+02
+ȷ=2, C=12657, ro=1.1e-01, rs=4.6e+02, Vμ=2.4e+02
+s=6722, vio=1.201e+02
+s=927, vio=1.161e+02
+s=2250, vio=5.872e+01
+s=3231, vio=7.538e+01
+s=5964, vio=2.107e+01
+s=512, vio=2.192e+01
+roΣ = 2792.464650630951
+lb = 4.16052e+03
+Algo3: 3517.657172 seconds (697.32 k allocations: 47.663 MiB, 22830 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57358 rows, 7061 columns and 3556164 nonzeros (Min)
+Model fingerprint: 0x9e44c399
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 61 integer (61 binary)
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 5e+03]
+
+Found heuristic solution: objective 4641.5050791
+Found heuristic solution: objective 4641.5050791
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 2 rows and 2 columns
+Presolve time: 5.51s
+Presolved: 57360 rows, 7063 columns, 2828946 nonzeros
+Variable types: 7000 continuous, 63 integer (61 binary)
+Found heuristic solution: objective 4582.4189547
+Root relaxation presolved: 57360 rows, 7063 columns, 2828946 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -1.5504601e+06   1.142184e+10   0.000000e+00      8s
+    2545    4.0899887e+03   1.423902e+06   0.000000e+00     10s
+    6804    4.1486911e+03   1.603923e+08   0.000000e+00     15s
+    8611    4.1551408e+03   1.919499e+06   0.000000e+00     20s
+   10260    4.1579504e+03   9.694489e+04   0.000000e+00     25s
+   11783    4.1593282e+03   4.198233e+04   0.000000e+00     30s
+   13042    4.1599351e+03   1.908480e+04   0.000000e+00     35s
+   14432    4.1602527e+03   3.825264e+04   0.000000e+00     41s
+   15772    4.1604237e+03   6.768002e+03   0.000000e+00     46s
+   17062    4.1605063e+03   1.388415e+03   0.000000e+00     50s
+   18112    4.1605238e+03   0.000000e+00   0.000000e+00     53s
+
+Root relaxation: objective 4.160524e+03, 18112 iterations, 46.46 seconds (71.54 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4160.52381    0   38 4582.41895 4160.52381  9.21%     -   54s
+H    0     0                    4240.4270954 4160.52381  1.88%     -   55s
+H    0     0                    4164.1396044 4160.52381  0.09%     -   56s
+     0     0 4160.54236    0   39 4164.13960 4160.54236  0.09%     -   68s
+     0     0 4160.54784    0   40 4164.13960 4160.54784  0.09%     -   71s
+     0     0 4160.55035    0   40 4164.13960 4160.55035  0.09%     -   72s
+     0     0 4160.55170    0   40 4164.13960 4160.55170  0.09%     -   73s
+     0     0 4160.55280    0   40 4164.13960 4160.55280  0.09%     -   74s
+     0     0 4160.55342    0   40 4164.13960 4160.55342  0.09%     -   75s
+     0     0 4160.55378    0   40 4164.13960 4160.55378  0.09%     -   75s
+     0     0 4160.55497    0   40 4164.13960 4160.55497  0.09%     -  104s
+H    0     0                    4163.2226004 4160.55508  0.06%     -  105s
+     0     0 4160.55514    0   40 4163.22260 4160.55514  0.06%     -  106s
+     0     0 4160.55613    0   40 4163.22260 4160.55613  0.06%     -  139s
+     0     0 4160.55633    0   40 4163.22260 4160.55633  0.06%     -  141s
+     0     0 4160.55760    0   40 4163.22260 4160.55760  0.06%     -  173s
+     0     0 4160.55776    0   40 4163.22260 4160.55776  0.06%     -  175s
+     0     0 4160.55928    0   40 4163.22260 4160.55928  0.06%     -  206s
+     0     0 4160.55986    0   40 4163.22260 4160.55986  0.06%     -  208s
+     0     0 4160.56013    0   40 4163.22260 4160.56013  0.06%     -  208s
+     0     0 4160.56060    0   41 4163.22260 4160.56060  0.06%     -  209s
+     0     0 4160.56074    0   41 4163.22260 4160.56074  0.06%     -  211s
+     0     0 4160.56110    0   41 4163.22260 4160.56110  0.06%     -  212s
+     0     0 4160.56111    0   41 4163.22260 4160.56111  0.06%     -  234s
+     0     0 4160.56111    0   41 4163.22260 4160.56111  0.06%     -  235s
+     0     2 4160.56113    0   41 4163.22260 4160.56113  0.06%     -  241s
+     1     3 4160.58173    1   38 4163.22260 4160.56137  0.06%   909  246s
+     2     2     cutoff    1      4163.22260 4160.58175  0.06%  3193  261s
+     4     4 4160.61971    3   31 4163.22260 4160.58351  0.06%  1876  267s
+     5     3     cutoff    3      4163.22260 4160.58351  0.06%  2916  280s
+     7     5 4160.75962    4   24 4163.22260 4160.58351  0.06%  2359  290s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 147
+  RLT: 30
+
+Explored 9 nodes (37548 simplex iterations) in 300.03 seconds (304.84 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 4163.22 4163.42 
+
+Time limit reached
+Best objective 4.163222600433e+03, best bound 4.160583513960e+03, gap 0.0634%
+
+User-callback calls 88439, time in user-callback 0.03 sec
+eval_MIP_Runtime = 300.0349841117859
+Sol=1: lb = 4160.583513960205 < 4189.431903495371 = ub, agap = 28.84838953516646, rgap = 0.006885990797725431
+final_eval: 634.479315 seconds (138.67 k allocations: 6.008 MiB, 40 lock conflicts)
+ending vioMean=17.826580220524836, Extrema=(8.604952490356027, 35.44160123037091), Median=17.270040371170694
+ending memory=119.62680053710938GiB
+   julia> SEEDi=8, S=7000, NP=255, memory=119.62680053710938 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 65
+s=  743
+s= 3866
+s= 4444
+JuMP Modeling sub vec: 1455.766210 seconds (93.73 G allocations: 2.570 TiB, 89.01% gc time, 118 lock conflicts)
+lb = -1.13533e+04
+ini_lb!: 403.133858 seconds (123.20 k allocations: 6.463 MiB, 417 lock conflicts)
+lb = -1.13533e+04
+s=1316, vio=1.694e+04
+ȷ=1, C=2287, ro=3.6e-02, rs=5.4e+01, Vμ=2.8e+03
+s=3025, vio=1.717e+04
+s=88, vio=6.462e+02
+s=1987, vio=9.358e+02
+ȷ=1, C=7761, ro=6.3e-02, rs=2.4e+02, Vμ=3.5e+02
+ȷ=4, C=19943, ro=2.1e-01, rs=8.5e+02, Vμ=1.5e+02
+s=6978, vio=2.175e+02
+s=5291, vio=7.151e+01
+s=6157, vio=2.194e+01
+roΣ = 2849.3374586105347
+lb = 4.31342e+03
+Algo3: 3601.989766 seconds (713.20 k allocations: 48.522 MiB, 23632 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57327 rows, 7065 columns and 3783575 nonzeros (Min)
+Model fingerprint: 0x284003d8
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 65 integer (65 binary)
+Coefficient statistics:
+  Matrix range     [3e-06, 2e+03]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 1e+04]
+
+Found heuristic solution: objective 9885.0994800
+Found heuristic solution: objective 9885.0994800
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 1 rows and 3 columns
+Presolve time: 5.64s
+Presolved: 57328 rows, 7068 columns, 3021788 nonzeros
+Variable types: 7002 continuous, 66 integer (65 binary)
+Found heuristic solution: objective 9611.6880045
+Root relaxation presolved: 57328 rows, 7068 columns, 3021788 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -2.9772274e+07   1.470334e+11   0.000000e+00      8s
+    2319    4.2085261e+03   4.208735e+05   0.000000e+00     10s
+    6148    4.2939114e+03   1.292375e+07   0.000000e+00     15s
+    8094    4.3050777e+03   6.140086e+05   0.000000e+00     20s
+   10040    4.3097916e+03   1.126674e+05   0.000000e+00     25s
+   11580    4.3117369e+03   3.776280e+05   0.000000e+00     30s
+   12986    4.3126640e+03   8.554584e+05   0.000000e+00     35s
+   14375    4.3131837e+03   4.913743e+03   0.000000e+00     40s
+   15525    4.3133268e+03   2.653942e+05   0.000000e+00     45s
+   16825    4.3134082e+03   1.044906e+02   0.000000e+00     50s
+   17712    4.3134216e+03   0.000000e+00   0.000000e+00     53s
+
+Root relaxation: objective 4.313422e+03, 17712 iterations, 46.06 seconds (69.31 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 4313.42160    0   37 9611.68800 4313.42160  55.1%     -   54s
+H    0     0                    9604.7274910 4313.42160  55.1%     -   54s
+H    0     0                    4332.9154247 4313.42160  0.45%     -   55s
+H    0     0                    4317.4538392 4313.42160  0.09%     -   56s
+     0     0 4313.42476    0   39 4317.45384 4313.42476  0.09%     -   66s
+     0     0 4313.42582    0   39 4317.45384 4313.42582  0.09%     -   68s
+     0     0 4313.42595    0   39 4317.45384 4313.42595  0.09%     -   69s
+     0     0 4313.42607    0   39 4317.45384 4313.42607  0.09%     -   98s
+     0     0 4313.42610    0   39 4317.45384 4313.42610  0.09%     -   99s
+     0     0 4313.42618    0   39 4317.45384 4313.42618  0.09%     -  129s
+     0     0 4313.42628    0   39 4317.45384 4313.42628  0.09%     -  131s
+     0     0 4313.42636    0   39 4317.45384 4313.42636  0.09%     -  161s
+     0     0 4313.42643    0   40 4317.45384 4313.42643  0.09%     -  163s
+     0     0 4313.42644    0   40 4317.45384 4313.42644  0.09%     -  181s
+     0     0 4313.42644    0   40 4317.45384 4313.42644  0.09%     -  181s
+H    0     0                    4316.5548549 4313.42645  0.07%     -  186s
+H    0     0                    4316.3806228 4313.42645  0.07%     -  187s
+     0     2 4313.42645    0   40 4316.38062 4313.42645  0.07%     -  188s
+     1     3 4313.44011    1   41 4316.38062 4313.42677  0.07%   501  192s
+     2     2     cutoff    1      4316.38062 4313.44016  0.07%  2966  204s
+     3     3 4313.44708    2   40 4316.38062 4313.44104  0.07%  2101  206s
+     4     2     cutoff    2      4316.38062 4313.44709  0.07%  3081  219s
+     5     3 4313.44886    3   40 4316.38062 4313.44886  0.07%  2509  220s
+     7     5 4313.49180    5   35 4316.38062 4313.45120  0.07%  1941  226s
+     9     5 4313.56992    6   32 4316.38062 4313.47479  0.07%  1665  234s
+    10     6 4313.62940    6   36 4316.38062 4313.47479  0.07%  1714  241s
+    12     6     cutoff    7      4316.38062 4313.47479  0.07%  2070  255s
+    14     8 4313.99392    9   31 4316.38062 4313.47479  0.07%  2017  265s
+    15     9 4313.70575    9   23 4316.38062 4313.47479  0.07%  1948  270s
+    17    11 4313.86081   11   25 4316.38062 4313.47479  0.07%  1827  276s
+    18    12 4314.10404   11   26 4316.38062 4313.47479  0.07%  1841  282s
+    19    13 4314.00877   12   23 4316.38062 4313.47479  0.07%  1829  286s
+    20    14 4314.15434   12   25 4316.38062 4313.47479  0.07%  1857  293s
+    21    15 4314.02732   13   24 4316.38062 4313.47479  0.07%  1805  295s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 46
+  RLT: 1
+
+Explored 28 nodes (57285 simplex iterations) in 300.05 seconds (376.51 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 4316.38 4316.55 
+
+Time limit reached
+Best objective 4.316380622790e+03, best bound 4.313474786387e+03, gap 0.0673%
+
+User-callback calls 68980, time in user-callback 0.02 sec
+eval_MIP_Runtime = 300.0558400154114
+Sol=1: lb = 4313.474786386803 < 4347.452655676668 = ub, agap = 33.97786928986443, rgap = 0.007815581210642505
+final_eval: 672.243740 seconds (119.28 k allocations: 5.416 MiB, 71 lock conflicts)
+ending vioMean=19.71596250581133, Extrema=(4.314590187376325, 39.682919142593164), Median=20.112170216634013
+ending memory=124.62420272827148GiB
+   julia> SEEDi=9, S=7000, NP=255, memory=124.62420272827148 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 69
+s= 2090
+JuMP Modeling sub vec: 1376.769378 seconds (93.85 G allocations: 2.576 TiB, 88.80% gc time, 108 lock conflicts)
+lb = -6.11012e+03
+ini_lb!: 454.739429 seconds (123.20 k allocations: 6.463 MiB, 426 lock conflicts)
+lb = -6.11012e+03
+s=450, vio=1.166e+04
+ȷ=1, C=3125, ro=4.7e-02, rs=8.0e+01, Vμ=2.5e+03
+ȷ=1, C=3539, ro=4.3e-02, rs=9.4e+01, Vμ=2.8e+03
+ȷ=1, C=4311, ro=4.8e-02, rs=1.2e+02, Vμ=3.3e+03
+ȷ=1, C=4651, ro=5.4e-02, rs=1.4e+02, Vμ=3.5e+03
+ȷ=1, C=5007, ro=5.5e-02, rs=1.5e+02, Vμ=3.8e+03
+ȷ=1, C=5411, ro=5.6e-02, rs=1.7e+02, Vμ=4.0e+03
+ȷ=3, C=6544, ro=5.9e-02, rs=2.1e+02, Vμ=4.8e+03
+s=875, vio=7.294e+02
+ȷ=5, C=13535, ro=4.2e-01, rs=5.8e+02, Vμ=2.2e+02
+s=2052, vio=1.064e+02
+s=5172, vio=4.839e+01
+roΣ = 3142.9816398620605
+lb = 3.98687e+03
+Algo3: 3910.802226 seconds (687.66 k allocations: 47.140 MiB, 23843 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57458 rows, 7069 columns and 4009427 nonzeros (Min)
+Model fingerprint: 0x699ca9ba
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 69 integer (69 binary)
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+04]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 2e+04]
+
+Found heuristic solution: objective 23627.660595
+Found heuristic solution: objective 23627.660595
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 2 rows and 2 columns
+Presolve time: 6.86s
+Presolved: 57460 rows, 7071 columns, 2993204 nonzeros
+Variable types: 7000 continuous, 71 integer (69 binary)
+Found heuristic solution: objective 23515.411762
+Root relaxation presolved: 57460 rows, 7071 columns, 2993204 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -9.9789340e+06   3.431738e+11   0.000000e+00      9s
+     698    3.5503048e+03   1.697278e+07   0.000000e+00     10s
+Warning: Markowitz tolerance tightened to 0.0625
+    5529    3.8925060e+03   6.653892e+07   0.000000e+00     15s
+    8170    3.9572390e+03   2.888198e+05   0.000000e+00     20s
+   10255    3.9753832e+03   3.598712e+04   0.000000e+00     25s
+   11914    3.9806583e+03   4.716917e+05   0.000000e+00     30s
+   13287    3.9833287e+03   3.638903e+04   0.000000e+00     35s
+   14676    3.9848800e+03   5.786009e+03   0.000000e+00     40s
+   15907    3.9857259e+03   3.848317e+03   0.000000e+00     45s
+   17077    3.9862714e+03   2.202854e+05   0.000000e+00     50s
+   18387    3.9865950e+03   3.666170e+03   0.000000e+00     56s
+   19447    3.9867427e+03   3.447396e+04   0.000000e+00     60s
+   20727    3.9868465e+03   1.924220e+02   0.000000e+00     65s
+   21913    3.9868722e+03   0.000000e+00   0.000000e+00     69s
+
+Root relaxation: objective 3.986872e+03, 21913 iterations, 60.46 seconds (91.77 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 3986.87219    0   37 23515.4118 3986.87219  83.0%     -   70s
+H    0     0                    23425.563036 3986.87219  83.0%     -   70s
+H    0     0                    4003.6050289 3986.87219  0.42%     -   71s
+H    0     0                    3990.5972367 3986.87219  0.09%     -   71s
+H    0     0                    3989.4870636 3986.87219  0.07%     -   72s
+     0     0 3986.95757    0   38 3989.48706 3986.95757  0.06%     -   86s
+H    0     0                    3989.1509216 3986.95768  0.05%     -   87s
+H    0     0                    3989.0741553 3986.95768  0.05%     -   89s
+     0     0 3986.96666    0   39 3989.07416 3986.96666  0.05%     -   93s
+     0     0 3986.96973    0   40 3989.07416 3986.96973  0.05%     -   94s
+     0     0 3986.97059    0   40 3989.07416 3986.97059  0.05%     -   95s
+     0     0 3986.97103    0   40 3989.07416 3986.97103  0.05%     -   95s
+     0     0 3986.97124    0   40 3989.07416 3986.97124  0.05%     -   96s
+     0     0 3987.01281    0   45 3989.07416 3987.01281  0.05%     -  119s
+     0     0 3987.02393    0   45 3989.07416 3987.02393  0.05%     -  125s
+     0     0 3987.02879    0   45 3989.07416 3987.02879  0.05%     -  127s
+     0     0 3987.03180    0   45 3989.07416 3987.03180  0.05%     -  129s
+     0     0 3987.03384    0   45 3989.07416 3987.03384  0.05%     -  130s
+     0     0 3987.03460    0   44 3989.07416 3987.03460  0.05%     -  131s
+     0     0 3987.03493    0   45 3989.07416 3987.03493  0.05%     -  132s
+     0     0 3987.04007    0   46 3989.07416 3987.04007  0.05%     -  158s
+     0     0 3987.04264    0   47 3989.07416 3987.04264  0.05%     -  162s
+     0     0 3987.04384    0   47 3989.07416 3987.04384  0.05%     -  164s
+     0     0 3987.04400    0   47 3989.07416 3987.04400  0.05%     -  164s
+     0     0 3987.04773    0   47 3989.07416 3987.04773  0.05%     -  191s
+     0     0 3987.04812    0   48 3989.07416 3987.04812  0.05%     -  194s
+     0     0 3987.04911    0   47 3989.07416 3987.04911  0.05%     -  216s
+     0     0 3987.05010    0   48 3989.07416 3987.05010  0.05%     -  219s
+     0     0 3987.05021    0   48 3989.07416 3987.05021  0.05%     -  241s
+     0     0 3987.05034    0   48 3989.07416 3987.05034  0.05%     -  265s
+     0     0 3987.05040    0   48 3989.07416 3987.05040  0.05%     -  288s
+
+Cutting planes:
+  Learned: 1
+  MIR: 219
+  RLT: 17
+
+Explored 1 nodes (29275 simplex iterations) in 300.08 seconds (270.04 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 3989.07 3989.09 
+
+Time limit reached
+Best objective 3.989074155292e+03, best bound 3.987050402867e+03, gap 0.0507%
+
+User-callback calls 116317, time in user-callback 0.03 sec
+eval_MIP_Runtime = 300.08335614204407
+Sol=1: lb = 3987.050402866936 < 4008.0460860176177 = ub, agap = 20.995683150681543, rgap = 0.0052383836662773485
+final_eval: 714.276020 seconds (166.46 k allocations: 6.856 MiB, 68 lock conflicts)
+ending vioMean=20.67976798445487, Extrema=(6.541946532694055, 44.241531825916354), Median=18.87273419773294
+ending memory=112.74600219726562GiB
+   julia> SEEDi=10, S=7000, NP=255, memory=112.74600219726562 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 77
+s= 4085
+s= 5114
+s= 5935
+JuMP Modeling sub vec: 1402.630011 seconds (93.79 G allocations: 2.572 TiB, 88.81% gc time, 130 lock conflicts)
+lb = -3.88701e+03
+ini_lb!: 431.799828 seconds (123.20 k allocations: 6.463 MiB, 515 lock conflicts)
+lb = -3.88701e+03
+s=1782, vio=1.071e+04
+ȷ=1, C=3194, ro=4.4e-02, rs=8.1e+01, Vμ=2.3e+03
+ȷ=1, C=6369, ro=5.8e-02, rs=2.0e+02, Vμ=3.7e+03
+ȷ=2, C=6414, ro=7.4e-02, rs=2.0e+02, Vμ=3.8e+03
+s=3443, vio=6.584e+02
+s=6517, vio=2.905e+02
+ȷ=9, C=13748, ro=5.4e-01, rs=5.8e+02, Vμ=2.7e+02
+ȷ=14, C=16206, ro=5.0e-01, rs=7.1e+02, Vμ=2.3e+02
+s=6266, vio=2.356e+02
+s=4750, vio=1.202e+02
+s=1147, vio=1.336e+02
+roΣ = 3062.1817104816437
+lb = 3.95659e+03
+Algo3: 3687.101233 seconds (665.78 k allocations: 45.877 MiB, 24047 lock conflicts)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 57240 rows, 7077 columns and 4464683 nonzeros (Min)
+Model fingerprint: 0x58957792
+Model has 7000 linear objective coefficients
+Variable types: 7000 continuous, 77 integer (77 binary)
+Coefficient statistics:
+  Matrix range     [3e-05, 5e+02]
+  Objective range  [1e-04, 1e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 5e+03]
+
+Found heuristic solution: objective 4510.6198177
+Found heuristic solution: objective 4510.6198177
+Presolve removed 0 rows and 0 columns (presolve time = 5s)...
+Presolve added 4 rows and 8 columns
+Presolve time: 6.66s
+Presolved: 57244 rows, 7085 columns, 3363105 nonzeros
+Variable types: 7004 continuous, 81 integer (77 binary)
+Found heuristic solution: objective 4411.5175213
+Root relaxation presolved: 57244 rows, 7085 columns, 3363105 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -7.0630724e+06   4.966484e+10   0.000000e+00      9s
+     745   -1.2977298e+05   1.210413e+10   0.000000e+00     10s
+    5001    3.9203349e+03   1.276062e+07   0.000000e+00     15s
+    6947    3.9400189e+03   7.623001e+05   0.000000e+00     20s
+    8337    3.9459528e+03   5.430502e+05   0.000000e+00     25s
+    9727    3.9498965e+03   4.667797e+04   0.000000e+00     30s
+   10952    3.9523025e+03   6.744658e+04   0.000000e+00     35s
+   12210    3.9539118e+03   2.668792e+04   0.000000e+00     40s
+   13310    3.9549332e+03   5.699509e+04   0.000000e+00     45s
+   14400    3.9555557e+03   4.754764e+05   0.000000e+00     50s
+   15530    3.9559454e+03   7.823862e+03   0.000000e+00     56s
+   16540    3.9562300e+03   3.431272e+03   0.000000e+00     60s
+   17520    3.9563979e+03   1.110168e+03   0.000000e+00     66s
+   18440    3.9564945e+03   2.673262e+04   0.000000e+00     70s
+   19600    3.9565620e+03   5.673867e+03   0.000000e+00     75s
+   21043    3.9565883e+03   0.000000e+00   0.000000e+00     81s
+   21044    3.9565880e+03   0.000000e+00   0.000000e+00     81s
+
+Root relaxation: objective 3.956588e+03, 21044 iterations, 72.40 seconds (109.76 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 3956.58800    0   49 4411.51752 3956.58800  10.3%     -   82s
+H    0     0                    3962.1141073 3956.58800  0.14%     -   83s
+H    0     0                    3961.7626115 3956.58800  0.13%     -   84s
+H    0     0                    3961.3548992 3956.58800  0.12%     -   84s
+     0     0 3956.59431    0   50 3961.35490 3956.59431  0.12%     -   98s
+     0     0 3956.59828    0   51 3961.35490 3956.59828  0.12%     -  101s
+     0     0 3956.59980    0   52 3961.35490 3956.59980  0.12%     -  103s
+     0     0 3956.60158    0   52 3961.35490 3956.60158  0.12%     -  104s
+     0     0 3956.60247    0   52 3961.35490 3956.60247  0.12%     -  105s
+     0     0 3956.60347    0   52 3961.35490 3956.60347  0.12%     -  106s
+     0     0 3956.60428    0   52 3961.35490 3956.60428  0.12%     -  107s
+     0     0 3956.60455    0   52 3961.35490 3956.60455  0.12%     -  107s
+     0     0 3956.60518    0   52 3961.35490 3956.60518  0.12%     -  143s
+H    0     0                    3961.3465024 3956.60524  0.12%     -  146s
+H    0     0                    3961.3062823 3956.60524  0.12%     -  147s
+     0     0 3956.60549    0   52 3961.30628 3956.60549  0.12%     -  148s
+     0     0 3956.60644    0   51 3961.30628 3956.60644  0.12%     -  186s
+     0     0 3956.60662    0   52 3961.30628 3956.60662  0.12%     -  188s
+     0     0 3956.60704    0   52 3961.30628 3956.60704  0.12%     -  225s
+     0     0 3956.60721    0   52 3961.30628 3956.60721  0.12%     -  227s
+     0     0 3956.60741    0   52 3961.30628 3956.60741  0.12%     -  263s
+     0     0 3956.60748    0   52 3961.30628 3956.60748  0.12%     -  265s
+     0     0 3956.60754    0   52 3961.30628 3956.60754  0.12%     -  297s
+
+Cutting planes:
+  MIR: 44
+  RLT: 9
+
+Explored 1 nodes (22605 simplex iterations) in 300.02 seconds (233.01 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 3961.31 3961.35 
+
+Time limit reached
+Best objective 3.961306282301e+03, best bound 3.956607543439e+03, gap 0.1186%
+
+User-callback calls 118894, time in user-callback 0.03 sec
+eval_MIP_Runtime = 300.0294041633606
+Sol=1: lb = 3956.607543438672 < 4001.2323412582355 = ub, agap = 44.624797819563355, rgap = 0.01115276345225445
+final_eval: 712.315161 seconds (168.95 k allocations: 6.932 MiB, 82 lock conflicts)
+ending vioMean=29.886209693511404, Extrema=(14.159993691154796, 58.84096336786729), Median=28.543004916589894
+ending memory=118.57626342773438GiB
+amd@amd:~/julia_projects/uc/Uc2$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|Sd| $\text{lb}^\text{ini}$ | $\text{t}^\text{ini}$ | $\text{t}^\text{Algo3}$| $\text{t}^\text{ro}$ | lb | agap | rgap | $\text{t}^\text{B}$ | $\text{N}^\text{B}$ | $\text{N}^\text{Row}$ | Nnz[m] |
+|-|-|-|-|-|-|-|-|-|-|-|-|
+|0| -1.27e4 |418|3741|2675| 2.78e4 | 11.2 | 4.03e-4 |46 |65|57335|3.8|
+|1| -3.69e4 |470|3930|3066| 4.02e3 | 22.1 | 5.47e-3 |262|72|57324|4.2|
+|2| -1.17e4 |382|3366|2704| 4.10e3 | 24.2 | 5.88e-3 |78 |60|57461|3.5|
+|3| -7.97e2  |451|3919|3130| 4.14e3 | 21.2 | 5.09e-3 |61 |63|57187|3.7|
+|4| -9.35e3 |470|3806|3128| 3.82e3 | 38.0 | 9.83e-3 |86 |70|57350|4.1|
+|5| -3.09e5 |466|4174|3131| 2.23e4 | 24.7 | 1.11e-3 |74 |76|57120|4.4|
+|6| -2.44e3 |437|3706|3025| 3.90e3 | 34.8 | 8.85e-3 |79 |70|57054|4.1|
+|7| -5.84e2  |388|3517|2792| 4.16e3 | 28.8 | 6.89e-3 |105|61|57358|3.6|
+|8| -1.14e4 |403|3601|2849| 4.31e3 | 34.0 | 7.82e-3 |187|65|57327|3.8|
+|9| -6.11e3 |454|3910|3142| 3.99e3 | 21.0 | 5.24e-3 |89 |69|57458|4.0|
+|10|-3.89e3 |431|3687|3062| 3.96e3 | 44.6 | 1.12e-2 |46 |77|57240|4.5|
+
