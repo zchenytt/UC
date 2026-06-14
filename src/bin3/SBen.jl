@@ -1,8 +1,3 @@
-"""
-We observe that `eval` is consuming large memory
-
-If model is fixed, then try to improve the algorithm, by control cut-off level to enforce maxvio balance over all scenarios
-"""
 module SBen
 import Gurobi, JuMP
 import ..Settings, ..Case2383, ..WindGen, ..Static, ..Models
@@ -15,11 +10,11 @@ function _1(ch, s, Θs, n)
     Cd[1:N] .= pi_hat # to x
     Cd[N+2] = Obn = Settings.getmodeldblattr(n, "ObjBound")
     Cd[N+1] = vio = (pi_hat'x_che + Obn) - Θs # (x_che, Θs) here is local-stable
-    rand() < 1e-4 && @ccall(printf("s=%d, vio=%.3e\n"::Cstring; s::Cint, vio::Cdouble)::Cint)
+     rand() < 1e-4 &&  @ccall(printf("s=%d, vio=%.3e\n"::Cstring; s::Cint, vio::Cdouble)::Cint)
     put!(ch, s)
 end
 _spawn1s(s,Θs,n,Xl,CanSpawn,ch) = (n.x_che .= Xl; CanSpawn[s]=false; Threads.@spawn(_1(ch, s, Θs, n)))
-function trainsb_shortly(mst, sub, NP, sampleData; CuC = 50000, α = 0.5)
+function trainsb_shortly(mst, sub, NP, sampleData; NcutWanted = 50000, α = 0.5)
     (; o, S, N, Θ, Xl, Bv, Vv), ch = mst, Channel{Int}(); Threads.@threads(for n = sub
         _e7 = Gurobi.GRBgetenv(n.o)
         Gurobi.GRBsetdblparam(_e7, "MIPGap", 1e-3)    
@@ -28,19 +23,26 @@ function trainsb_shortly(mst, sub, NP, sampleData; CuC = 50000, α = 0.5)
     Cc=Cchar('<'); VΣ, Vμ = sum(Vv), SB_CUT_COT # initialize separation condition
     CanSpawn, cuC, ı, ȷ, roΣ = trues(S), 0, 0, 0, 0.
     for s=1:NP _spawn1s(s, Θ[s], sub[s], Xl, CanSpawn, ch) end; ı += NP
+    (msttxs, mstroiys, mstlbys, mstrotys, subtxs, subrotys, subgapys, subvioys, subVμys) = sampleData; T0 = time_ns()
     while true
         if isready(ch) === false && ȷ > 0
             Settings.opt_ass_opt(mst, "master") # if were solved at background, collide with GRBaddconstr!
             load_che(mst) # update Θ, Xl at the foreground!
-            # roi = Settings.getmodeldblattr(mst,"IterCount")
-            # lb = Settings.getmodeldblattr(mst,"ObjBound")
-            rot = Settings.getmodeldblattr(mst,"Runtime")
-            roΣ += rot; cuC += ȷ; cuC > CuC && break
-            rand() < 5e-4 && @ccall(printf("ȷ=%d, C=%d, ro=%.1e, rs=%.1e, Vμ=%.1e\n"::Cstring;
+            push!(msttxs, 1e-9(time_ns()-T0))
+            push!(mstroiys, Settings.getmodeldblattr(mst,"IterCount"))
+            push!(mstlbys, Settings.getmodeldblattr(mst,"ObjBound")); rot = Settings.getmodeldblattr(mst,"Runtime")
+            push!(mstrotys,rot)
+            roΣ += rot; cuC += ȷ; cuC > NcutWanted && break
+            rand() < 5e-4 &&  @ccall(printf("ȷ=%d, C=%d, ro=%.1e, rs=%.1e, Vμ=%.1e\n"::Cstring;
                 ȷ::Cint, cuC::Cint, rot::Cdouble, roΣ::Cdouble, Vμ::Cdouble)::Cint
-            );  ȷ = 0
+            ); ȷ = 0
         end
         s = take!(ch); CanSpawn[s]=true; n=sub[s]; Cd=n.Cd; ν=Cd[N+1]
+        push!(subtxs, 1e-9(time_ns()-T0))
+        push!(subrotys, Settings.getmodeldblattr(n,"Runtime"))
+        push!(subgapys, Settings.getmodeldblattr(n,"MIPGap"))
+        push!(subvioys, ν)
+        push!(subVμys, Vμ)
         ν>Vμ && (Cd[N+1]=-1;Gurobi.GRBaddconstr(o,N+1,n.Ci,Cd,Cc,-Cd[end],C_NULL);ȷ+=1)
         ν = ν>SB_CUT_COT ? (α)ν+(1-α)SB_CUT_COT : SB_CUT_COT; VΣ=VΣ-first(Vv)+ν; Vμ=(MuL)VΣ; push!(Vv,ν)
         while true # took one, so you must spawn a new one
@@ -121,7 +123,7 @@ function ini_lb!(mst, sub, NP)
         _e7 = Gurobi.GRBgetenv(n.o)
         Gurobi.GRBsetdblparam(_e7, "MIPGap", 1e-3)
         Gurobi.GRBsetdblparam(_e7, "TimeLimit", 15.)
-    end);      Gurobi.GRBgetdblattrarray(o, "X", S, N, Xl)
+    end); load_che(mst)
     for s=1:NP; n = sub[s]; Threads.@spawn(_ini_1(ch, s, n, Xl)) end; i = NP
     while true
         i === S && break
@@ -157,6 +159,7 @@ function load_che(mst) # ✅
     (; o, S, N, Θ, Xl) = mst
     Gurobi.GRBgetdblattrarray(o, "X", 0, S,  Θ)
     Gurobi.GRBgetdblattrarray(o, "X", S, N, Xl)
+    clamp!(Xl, 0., 1.)
 end
 
 "evaluation is very different from adding cuts---It must generate Binary Trial"
