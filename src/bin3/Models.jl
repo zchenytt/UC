@@ -1,4 +1,6 @@
 """
+mst (multi-theta) & sub
+
 First-stage have some start-up cost, but the u variable is not the complicating variable,
 So in 1st-stage we effectively have 0 cost
 """
