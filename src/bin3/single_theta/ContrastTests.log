@@ -1,3 +1,8 @@
+############################################################################################################
+# This is the logging of a comparative test between single-theta and multi-theta
+# under S=4000, SEEDi=4, 255 virtual processors
+############################################################################################################
+
 # This is the logging of `single-theta` that takes 15.5 hours to finish
 amd@amd:~/julia_projects/uc/Uc2$ julia --project=. --threads=255,1 Script.jl
    julia> SEEDi=4, S=4000, NP=255, memory=494.0857810974121 GiB
@@ -115,19 +120,6 @@ H    0     0                    3839.8120028 3823.03661  0.44%     -    0s
 H    0     0                    3834.7329311 3823.03661  0.31%     -    0s
 H    0     0                    3833.1860750 3823.03661  0.26%     -    0s
 H    0     0                    3832.1850878 3823.03661  0.24%     -    0s
-     0     0 3823.04941    0   35 3832.18509 3823.04941  0.24%     -    0s
-     0     0 3823.05426    0   34 3832.18509 3823.05426  0.24%     -    0s
-     0     0 3823.05478    0   37 3832.18509 3823.05478  0.24%     -    0s
-     0     0 3823.05481    0   38 3832.18509 3823.05481  0.24%     -    0s
-     0     0 3823.07027    0   39 3832.18509 3823.07027  0.24%     -    0s
-     0     0 3823.07822    0   38 3832.18509 3823.07822  0.24%     -    0s
-     0     0 3823.07823    0   40 3832.18509 3823.07823  0.24%     -    0s
-     0     0 3823.07974    0   39 3832.18509 3823.07974  0.24%     -    0s
-     0     0 3823.08017    0   40 3832.18509 3823.08017  0.24%     -    0s
-     0     0 3823.08026    0   39 3832.18509 3823.08026  0.24%     -    0s
-     0     0 3823.08077    0   39 3832.18509 3823.08077  0.24%     -    0s
-     0     0 3823.08100    0   39 3832.18509 3823.08100  0.24%     -    0s
-     0     2 3823.08100    0   39 3832.18509 3823.08100  0.24%     -    0s
 H  287   257                    3831.5367549 3823.11414  0.22%  10.0    0s
 H  287   256                    3830.4881521 3823.11414  0.19%  10.0    0s
 *  314   275              51    3829.6914095 3823.11414  0.17%   9.4    0s
@@ -149,31 +141,7 @@ H22372  6518                    3827.9975595 3825.15533  0.07%  10.9   19s
  42127 14956 3826.39439   40   16 3827.80619 3825.71803  0.05%  10.8   30s
 H46287 13999                    3827.6789967 3825.79354  0.05%  10.8   32s
  51074 15479 3827.07777   40   19 3827.67900 3825.86493  0.05%  10.7   35s
- 61212 18422 3827.75931   57   11 3827.67900 3825.99108  0.04%  10.7   40s
- 71414 21024 3827.79609   46   11 3827.67900 3826.10437  0.04%  10.7   45s
- 81311 23432 3826.35462   37   17 3827.67900 3826.20097  0.04%  10.6   50s
- 91359 25502 3826.89116   42   17 3827.67900 3826.28559  0.04%  10.5   55s
- 99937 27143 3826.89467   37   20 3827.67900 3826.35074  0.03%  10.5   60s
- 110243 28968 3826.51300   34   19 3827.67900 3826.42241  0.03%  10.5   65s
- 120482 30543     cutoff   42      3827.67900 3826.48781  0.03%  10.4   70s
- 130576 31771     cutoff   41      3827.67900 3826.55092  0.03%  10.4   75s
- 140306 32877 3826.99227   40   24 3827.67900 3826.60943  0.03%  10.4   80s
- 150345 33823 3827.43499   40   17 3827.67900 3826.66404  0.03%  10.3   85s
- 160620 34528 3827.48245   47   13 3827.67900 3826.72001  0.03%  10.3   90s
- 170436 34963 3827.30435   39   19 3827.67900 3826.77276  0.02%  10.3   95s
- 179500 35155 3826.99114   42   18 3827.67900 3826.81872  0.02%  10.3  100s
- 189368 35259     cutoff   41      3827.67900 3826.87345  0.02%  10.2  105s
- 199388 35084     cutoff   44      3827.67900 3826.92415  0.02%  10.2  110s
- 209980 34507     cutoff   48      3827.67900 3826.98043  0.02%  10.2  115s
- 219682 33620     cutoff   36      3827.67900 3827.03887  0.02%  10.2  120s
- 229692 32241 3827.68410   47   13 3827.67900 3827.10432  0.02%  10.2  125s
- 239930 30391     cutoff   45      3827.67900 3827.17748  0.01%  10.1  130s
- 248926 28179     cutoff   56      3827.67900 3827.25125  0.01%  10.1  135s
  257428 25212     cutoff   46      3827.67900 3827.35113  0.01%  10.1  140s
-
-Cutting planes:
-  Gomory: 8
-  MIR: 1
 
 Explored 261891 nodes (2641283 simplex iterations) in 142.34 seconds (148.30 work units)
 Thread count was 1 (of 256 available processors)
@@ -189,5 +157,103 @@ eval_MIP_Runtime = 142.33732914924622
 Sol=1: lb = 3827.4234425168024 < 3865.634651420165 = ub, agap = 38.2112089033626, rgap = 0.00988484746982607
 final_eval: 368.810152 seconds (900.99 k allocations: 39.778 MiB, 28 lock conflicts, 1.14% compilation time)
 ending memory=272.7938117980957GiB
-   julia> SEEDi=5, S=5000, NP=255, memory=272.7769889831543 GiB
 # We don't do this as the time requirement is harsh
+
+############################################################################################################
+############################################################################################################
+############################################################################################################
+
+# This is the logging of `multi-theta`
+amd@amd:~/julia_projects/uc/Uc2$ julia --project=. --threads=255,1 Script.jl
+   julia> SEEDi=4, S=4000, NP=255, memory=493.91020584106445 GiB
+Settings> Threads=(255,1), tid=1, pool=interactive
+master built with N = 70
+s= 1930
+JuMP Modeling sub vec: 897.188566 seconds (53.64 G allocations: 1.470 TiB, 86.62% gc time, 113 lock conflicts, 97.20% compilation time: <1% of which was recompilation)
+lb = -9.34246e+03
+ini_lb!: 268.276395 seconds (799.46 k allocations: 39.824 MiB, 405 lock conflicts, 11.57% compilation time)
+lb = -9.34246e+03
+s=141, vio=6.527e+02
+ȷ=7, C=8955, ro=2.5e-01, rs=3.1e+02, Vμ=2.0e+02
+s=3395, vio=3.371e+01
+roΣ = 1575.4867460727692
+lb = 3.82288e+03
+Algo3: 2074.938708 seconds (1.42 M allocations: 76.971 MiB, 11117 lock conflicts, 0.78% compilation time)
+Set parameter OutputFlag to value 1
+Set parameter TimeLimit to value 300
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64gpu - "Ubuntu 24.04.4 LTS")
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 256 logical processors, using up to 1 threads
+
+GPU model: NVIDIA RTX A6000, CUDA compute version 8.6, NVIDIA driver compatible with CUDA version 13
+
+Non-default parameters:
+TimeLimit  300
+Threads  1
+PoolSolutions  2
+PoolSearchMode  2
+
+Optimize a model with 34229 rows, 4070 columns and 2430259 nonzeros (Min)
+Model fingerprint: 0x8783faee
+Model has 4000 linear objective coefficients
+Variable types: 4000 continuous, 70 integer (70 binary)
+Coefficient statistics:
+  Matrix range     [6e-06, 2e+03]
+  Objective range  [3e-04, 3e-04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+03, 2e+04]
+
+Found heuristic solution: objective 16518.589963
+Found heuristic solution: objective 16518.589963
+Presolve added 10 rows and 14 columns
+Presolve time: 3.66s
+Presolved: 34239 rows, 4084 columns, 1858104 nonzeros
+Variable types: 4004 continuous, 80 integer (70 binary)
+Found heuristic solution: objective 16307.391937
+Root relaxation presolved: 34239 rows, 4084 columns, 1858104 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   12974    3.8228763e+03   0.000000e+00   0.000000e+00     26s
+
+Root relaxation: objective 3.822876e+03, 12974 iterations, 21.56 seconds (32.58 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 3822.87625    0   47 16307.3919 3822.87625  76.6%     -   27s
+H    0     0                    16253.041405 3822.87625  76.5%     -   27s
+H    0     0                    3827.5079914 3822.87625  0.12%     -   27s
+H    0     0                    3827.2457516 3822.88556  0.11%     -   81s
+     0     0 3822.88556    0   52 3827.24575 3822.88556  0.11%     -   94s
+     0     2 3822.88556    0   52 3827.24575 3822.88556  0.11%     -   96s
+     3     5 3826.78425    2   42 3827.24575 3822.89705  0.11%  1279  106s
+     6     6 3822.97689    4   46 3827.24575 3822.89705  0.11%   796  110s
+H   12    10                    3827.2401320 3822.89705  0.11%   537  115s
+H   18    16                    3827.0716084 3822.89705  0.11%   509  120s
+    20    20 3823.08812   13   38 3827.07161 3822.89705  0.11%   577  125s
+H   22    20                    3825.9062639 3822.89705  0.08%   552  129s
+    23    23 3823.24676   15   34 3825.90626 3822.89705  0.08%   593  130s
+    26    24 3823.90230   16   29 3825.90626 3822.89705  0.08%   624  138s
+H   27    23                    3825.8221946 3822.89705  0.08%   601  139s
+    28    26 3823.54519   17   28 3825.82219 3822.89705  0.08%   626  140s
+H   29    25                    3825.7645764 3822.89705  0.07%   604  141s
+H  232   176                    3824.0827613 3822.98410  0.03%   400  299s
+
+Explored 233 nodes (106502 simplex iterations) in 300.02 seconds (468.84 work units)
+Thread count was 1 (of 256 available processors)
+
+Solution count 2: 3824.08 3824.53 
+
+Time limit reached
+Best objective 3.824082761306e+03, best bound 3.822984100672e+03, gap 0.0287%
+
+User-callback calls 39878, time in user-callback 0.02 sec
+eval_MIP_Runtime = 300.0197710990906
+Sol=1: lb = 3822.9841006720144 < 3861.9355033366087 = ub, agap = 38.9514026645943, rgap = 0.010085979590011623
+final_eval: 524.410713 seconds (654.28 k allocations: 32.314 MiB, 33 lock conflicts, 0.94% compilation time)
+ending vioMean=30.42194652904184, Extrema=(9.81928395997511, 55.75849739391742), Median=31.58371519570119
+ending memory=278.7797203063965GiB
