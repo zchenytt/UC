@@ -31,10 +31,14 @@ end
 fig
 
 
+
+
+
 import JLD2
 using CairoMakie
+using LaTeXStrings
 
-a = JLD2.load("algo3data0.jld2");
+a = JLD2.load("algo3data1.jld2");
 msttxs = a["msttxs"];
 mstroiys = a["mstroiys"];
 mstlbys = a["mstlbys"];
@@ -45,13 +49,11 @@ subgapys = a["subgapys"];
 subvioys = a["subvioys"];
 subVμys = a["subVμys"];
 map(length, (msttxs, mstroiys, mstlbys, mstrotys, subtxs, subrotys, subgapys, subvioys, subVμys))
-extrema(msttxs)
-extrema(subtxs)
 for (i,e)=enumerate(subgapys) e < 1e-6 && (subgapys[i] = 1e-6) end
 
-f = Figure();
+f = Figure(size=(550, 1100));
 ax1 = Axis(f[1, 1], 
-    ylabel = "Master Lb",
+    ylabel = "Master lb",
     ylabelcolor=:snow4, 
     yticklabelcolor = :snow4, 
     xticksvisible=false, 
@@ -69,7 +71,7 @@ ax2 = Axis(f[1, 1],
 scatter!(ax1, msttxs, mstlbys, color = :snow4, markersize=1.5);
 scatter!(ax2, msttxs, mstrotys, color = :green, markersize=1.5);
 ax3 = Axis(f[2, 1];
-    ylabel = "Master Lb (local)",
+    ylabel = "Master lb",
     ylabelcolor = :snow4,
     yticklabelcolor = :snow4,
     ylabelsize = 13,
@@ -77,7 +79,7 @@ ax3 = Axis(f[2, 1];
     xticklabelsvisible=false
 );
 ax4 = Axis(f[2, 1];
-    ylabel = "Master Reoptimize #Iter",
+    ylabel = "Master Reoptimize #SimplexIteration",
     ylabelcolor = :coral,
     yticklabelcolor = :coral,
     ylabelsize = 13,
@@ -86,7 +88,7 @@ ax4 = Axis(f[2, 1];
     xticklabelsvisible=false
 );hidespines!(ax4);hidexdecorations!(ax4);
 scatter!(ax3, msttxs, mstlbys, color = :snow4, markersize=1.5);
-ylims!(ax3, 27000., 28000.)
+ylims!(ax3, 3600., 4015.)
 scatter!(ax4, msttxs, mstroiys, color = :coral, markersize=1.5);
 ax5 = Axis(f[3, 1];
     ylabel = "Subproblem Terminating Gap",
@@ -106,35 +108,35 @@ ax6 = Axis(f[4, 1];
     xticklabelsvisible=false
 )
 ax7 = Axis(f[5,1];
-    ylabel = "vio",
+    ylabel = "Vio",
     ylabelcolor = :red,
     yticklabelcolor = :red,
-    ylabelsize = 13,
+    ylabelsize = 16,
     xticksvisible=false, 
     xticklabelsvisible=false
 )
 ax8 = Axis(f[5,1];
-    ylabel = "Subproblem Vμ",
+    ylabel = L"$\bar{v}$",
     ylabelcolor = :blue,
     yticklabelcolor = :blue,
     yaxisposition = :right,
-    ylabelsize = 13,
+    ylabelsize = 18,
     xticksvisible=false, 
     xticklabelsvisible=false
 ); hidespines!(ax8); hidexdecorations!(ax8);
 ax9 = Axis(f[6, 1];
-    ylabel = "vio",
+    ylabel = "Vio",
     ylabelcolor = :red,
     yticklabelcolor = :red,
-    ylabelsize = 13,
+    ylabelsize = 16,
     xlabel = "Runtime of Algorithm 3 (s) (x-axis is shared)",
 );
 ax10 = Axis(f[6,1];
-    ylabel = "Subproblem Vμ",
+    ylabel = L"$\bar{v}$",
     ylabelcolor = :blue,
     yticklabelcolor = :blue,
     yaxisposition = :right,
-    ylabelsize = 13,
+    ylabelsize = 18,
     xticksvisible=false, 
     xticklabelsvisible=false
 ); hidespines!(ax10); hidexdecorations!(ax10);
@@ -143,9 +145,8 @@ scatter!(ax6, subtxs, subrotys, color = :blueviolet, markersize=1.5);
 scatter!(ax7, subtxs, subvioys, color = :red, markersize=1.2);
 scatter!(ax8, subtxs, subVμys, color = :blue, markersize=0.7);
 scatter!(ax9, subtxs, subvioys, color = :red, markersize=1.2);
-scatter!(ax10, subtxs, subVμys, color = :blue, markersize=0.7);
+scatter!(ax10, subtxs, subVμys, color = :blue, markersize=0.9);
 ylims!(ax9, 0., 900.);
 ylims!(ax10, 0., 900.);
 f
-
-save("algo3plot3.png", f)
+CairoMakie.save("longplot.png", f)
