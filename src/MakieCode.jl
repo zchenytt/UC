@@ -32,8 +32,6 @@ fig
 
 
 
-
-
 import JLD2
 using CairoMakie
 using LaTeXStrings
@@ -51,7 +49,7 @@ subVμys = a["subVμys"];
 map(length, (msttxs, mstroiys, mstlbys, mstrotys, subtxs, subrotys, subgapys, subvioys, subVμys))
 for (i,e)=enumerate(subgapys) e < 1e-6 && (subgapys[i] = 1e-6) end
 
-f = Figure(size=(550, 1100));
+f = Figure(size=(550, 750), figure_padding=8.0);
 ax1 = Axis(f[1, 1], 
     ylabel = "Master lb",
     ylabelcolor=:snow4, 
@@ -103,6 +101,7 @@ ax6 = Axis(f[4, 1];
     ylabel = "Subproblem Reoptimize Time (s)",
     ylabelcolor = :blueviolet,    
     yticklabelcolor = :blueviolet,
+    ylabelpadding = 32,
     ylabelsize = 13,
     xticksvisible=false, 
     xticklabelsvisible=false
@@ -144,9 +143,12 @@ scatter!(ax5, subtxs, subgapys, color = :goldenrod2, markersize=0.9);
 scatter!(ax6, subtxs, subrotys, color = :blueviolet, markersize=1.5);
 scatter!(ax7, subtxs, subvioys, color = :red, markersize=1.2);
 scatter!(ax8, subtxs, subVμys, color = :blue, markersize=0.7);
+scatter!(ax8, [4000.0], [44541.6], color = :white, markersize=0.01);
 scatter!(ax9, subtxs, subvioys, color = :red, markersize=1.2);
 scatter!(ax10, subtxs, subVμys, color = :blue, markersize=0.9);
 ylims!(ax9, 0., 900.);
 ylims!(ax10, 0., 900.);
-f
+rowsize!(f.layout, 3, 75)
+rowsize!(f.layout, 4, 75)
+rowsize!(f.layout, 5, 96)
 CairoMakie.save("longplot.png", f)
